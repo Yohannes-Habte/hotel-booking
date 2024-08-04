@@ -1,0 +1,197 @@
+@import './Variables.scss';
+@import './Mixins.scss';
+
+.app.gray {
+  width: 100%;
+  .home-page {
+    .home-contianer {
+      background-color: $grayMode-bg;
+    }
+  }
+
+  // List page
+  .list-page {
+    .list-container {
+      background-color: $grayMode-bg;
+      height: 100vh;
+    }
+  }
+
+  // Sidebar
+  .sidebar-header {
+    background-color: $grayMode-navbar-bg;
+    border-color: rgb(86, 84, 84);
+    .sidebar {
+      background-color: $grayMode-navbar-bg;
+      border-color: rgb(86, 84, 84);
+
+      .logo {
+        color: $grayMode-fontColor;
+      }
+
+      .horizontal-line {
+        height: 0;
+        border: 1px solid gray;
+      }
+
+      .sidbar-lists {
+        .sub-title {
+          color: $grayMode-fontColor;
+        }
+
+        .span-text {
+          color: $grayMode-fontColor;
+        }
+      }
+
+      .item {
+        &:hover {
+          background-color: $grayMode-hover;
+        }
+
+        .sidebar-icon {
+          color: $grayMode-fontColor;
+        }
+      }
+
+      .bg-title {
+        color: $grayMode-fontColor;
+      }
+    }
+  }
+
+  // Navbar
+  .navbar {
+    background-color: $grayMode-navbar-bg;
+    color: $grayMode-fontColor;
+
+    .search {
+      background-color: $grayMode-navbar-bg;
+      border: 1px solid lightgrey;
+
+      .navbar-input {
+        font-size: $afs;
+
+        &::placeholder {
+          color: $grayMode-fontColor;
+        }
+      }
+    }
+
+    .item {
+      .navbar-icon {
+        color: #ffffffab;
+      }
+    }
+  }
+
+  // Widget
+  .widget {
+    background-color: $grayMode-bg;
+
+    .title,
+    .counter {
+      color: $grayMode-fontColor;
+    }
+
+    .link {
+      color: blue;
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: underline;
+        color: red;
+      }
+    }
+  }
+
+  // Featured Chart
+  .featured-chart {
+    background-color: $grayMode-bg;
+
+    .total-revenue {
+      color: $grayMode-fontColor;
+    }
+
+    .chart {
+      background-color: $grayMode-bg;
+    }
+
+    .title,
+    .amount,
+    .description {
+      color: $grayMode-fontColor;
+    }
+    .item {
+      .item-title {
+        color: $grayMode-fontColor;
+      }
+    }
+  }
+
+  // Chart
+  .chart {
+    background-color: $grayMode-bg;
+
+    .revenue {
+      color: $grayMode-fontColor;
+      text-align: center;
+    }
+  }
+
+  // Normal table
+  .table-container {
+    background-color: $grayMode-bg;
+
+    .table-cell {
+      color: $grayMode-fontColor;
+      background-color: $grayMode-bg;
+    }
+    .cell-content {
+      color: $grayMode-fontColor;
+      .status {
+        &.Approved {
+          background: none;
+        }
+
+        &.Pending {
+          background: none;
+          color: #f807b0;
+        }
+      }
+    }
+
+    .TableCel {
+      color: $grayMode-fontColor;
+    }
+  }
+
+  // User data table
+  .users-data-table {
+    background-color: $grayMode-bg;
+
+    .head-cell {
+      background-color: $grayMode-navbar-bg;
+      color: $grayMode-fontColor;
+    }
+
+    .table-body-row {
+      color: $grayMode-fontColor;
+    }
+  }
+
+  // New page
+  .new-page {
+    .new-page-container {
+      background-color: $grayMode-bg;
+
+      .file-label {
+        color: $grayMode-fontColor;
+      }
+
+      .title {
+        color: $grayMode-fontColor;
+      }
+    }
+  }
+}

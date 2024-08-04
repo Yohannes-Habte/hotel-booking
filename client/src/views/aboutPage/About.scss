@@ -1,0 +1,229 @@
+@import '../../styles/Variables.scss';
+@import '../../styles/Mixins.scss';
+
+// Mobile
+.about-page {
+  width: 100%;
+  .about-container {
+    width: $mobile;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+
+    .about-title {
+      @include titleMobile;
+    }
+
+    .booking-steps {
+      @include shadow;
+      .steps-title {
+        @include shadow2;
+        background-color: $sideNavbar-bg;
+        color: #000000;
+      }
+      .step {
+        position: relative;
+        @include shadow2;
+        margin-top: 1rem;
+        cursor: pointer;
+
+        .down-arrow {
+          position: absolute;
+          right: 1.5rem;
+          top: 1.3rem;
+          color: $title;
+          font-size: $afs;
+        }
+
+        .up-arrow {
+          position: absolute;
+          right: 1.5rem;
+          top: 1.3rem;
+          color: #0000ff;
+          font-size: $afs;
+        }
+
+        .step-title {
+        }
+
+        .paragraph {
+        }
+      }
+    }
+
+    .image-container {
+      width: $laptop;
+      margin: auto;
+
+      .image {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+// Table
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .about-page {
+    width: 100%;
+    .about-container {
+      width: $mobile;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+
+      .about-title {
+        @include title;
+      }
+
+      .booking-steps {
+        @include shadow;
+        .steps-title {
+          @include shadow2;
+          background-color: $sideNavbar-bg;
+          color: #000000;
+        }
+        .step {
+          position: relative;
+          @include shadow2;
+          margin-top: 1rem;
+          cursor: pointer;
+
+          .down-arrow {
+            position: absolute;
+            right: 1.5rem;
+            top: 1.3rem;
+            color: $title;
+            font-size: $afs;
+          }
+
+          .up-arrow {
+            position: absolute;
+            right: 1.5rem;
+            top: 2rem;
+            color: #0000ff;
+            font-size: $afs;
+          }
+
+          .step-title {
+            @include shadow2;
+            background-color: $sideNavbar-bg;
+            color: #000000;
+          }
+
+          .paragraph {
+            background-color: none;
+            @include shadow2;
+            margin-top: 0.3rem;
+          }
+        }
+      }
+
+      .image-container {
+        width: $tablet;
+        margin: auto;
+
+        .image {
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}
+
+// Laptop
+@media screen and (min-width: 1024px) {
+  .about-page {
+    width: 100%;
+    background-color: $main;
+
+    .about-container {
+      position: relative;
+      width: $laptop;
+      margin: 1rem auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas:
+        'title title'
+        'steps image';
+      column-gap: 1rem;
+
+      .about-title {
+        grid-area: title;
+        @include title;
+      }
+
+      .booking-steps {
+        grid-area: steps;
+        @include shadow;
+
+        .steps-title {
+          @include shadow2;
+          background-color: $sideNavbar-bg;
+          color: #000000;
+        }
+
+        .step {
+          position: relative;
+          @include shadow2;
+          margin-top: 1rem;
+          cursor: pointer;
+
+          .down-arrow {
+            position: absolute;
+            right: 1.5rem;
+            top: 1.5rem;
+            color: $title;
+            font-size: $afs;
+          }
+
+          .up-arrow {
+            position: absolute;
+            right: 1.5rem;
+            top: 1.5rem;
+            color: #0000ff;
+            font-size: $afs;
+          }
+
+          .step-title {
+            background-color: $element;
+            padding: 0.5rem;
+          }
+
+          .default {
+            background-color: $main;
+          }
+
+          .paragraph {
+            background-color: none;
+            @include shadow2;
+            margin-top: 0.5rem;
+          }
+        }
+      }
+
+      .image-container {
+        grid-area: image;
+      
+
+        .image {
+          position: absolute;
+          top: 5rem;
+          width: 32rem;
+          height: 25rem;
+          object-fit: cover;
+          border-radius: $radius;
+        }
+
+        .image-title {
+          position: absolute;
+          top: 30.5rem;
+          color: darkblue;
+          font-size: $afs;
+        }
+      }
+    }
+  }
+}

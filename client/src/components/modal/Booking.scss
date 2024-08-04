@@ -1,0 +1,155 @@
+@import '../../styles/Variables.scss';
+@import '../../styles/Mixins.scss';
+
+// Mobile
+
+.modal-booking {
+  .modal-container {
+    .modal-icon {
+    }
+
+    .modal-title {
+    }
+
+    .select-room {
+    }
+
+    .item-container {
+      .item-info {
+        .item-title {
+        }
+        .item-description {
+        }
+        .item-maxPeople {
+        }
+        .item-maxPeople {
+        }
+      }
+
+      .selected-rooms {
+        .room-container {
+          .label {
+          }
+          .input-field {
+          }
+        }
+      }
+    }
+
+    .reserve-btn {
+    }
+  }
+}
+
+// Tablet
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .modal-booking {
+    .modal-container {
+      .modal-icon {
+      }
+
+      .modal-title {
+      }
+
+      .select-room {
+      }
+
+      .item-container {
+        .item-info {
+          .item-title {
+          }
+          .item-description {
+          }
+          .item-maxPeople {
+          }
+          .item-maxPeople {
+          }
+        }
+
+        .selected-rooms {
+          .room-container {
+            .label {
+            }
+            .input-field {
+            }
+          }
+        }
+      }
+
+      .reserve-btn {
+      }
+    }
+  }
+}
+
+// Laptop
+@media screen and (min-width: 1024px) {
+  .modal-booking {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 2rem;
+    left: 0;
+    background-color: white;
+    overflow-y: scroll;
+
+    .modal-container {
+      max-width: $max-width;
+      margin: auto;
+      position: relative;
+      padding: 1rem;
+      @include shadow;
+
+      .modal-icon {
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
+        cursor: pointer;
+      }
+
+      .modal-title {
+        @include title;
+      }
+
+      .select-room {
+        font-size: $aafs;
+      }
+
+      .item-container {
+        display: flex;
+        .item-info {
+          .item-title {
+            @include subTitle;
+            font-size: $aafs;
+          }
+          .item-description {
+          }
+          .item-maxPeople {
+          }
+          .item-maxPeople {
+          }
+        }
+
+        .selected-rooms {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.3rem;
+          font-size: $sfs;
+          .room-container {
+            display: flex;
+            flex-direction: column;
+
+            .label {
+            }
+            .input-field {
+            }
+          }
+        }
+      }
+
+      .reserve-btn {
+        @include button;
+      }
+    }
+  }
+}

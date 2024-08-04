@@ -1,0 +1,320 @@
+@import '../../styles/Variables.scss';
+@import '../../styles/Mixins.scss';
+
+// Mobile styling
+.header {
+  background-color: $header-bg;
+
+  .header-container {
+    .hotel-image {
+      display: none;
+      .image {
+      }
+    }
+
+    .header-title {
+      display: none;
+    }
+
+    // Header search
+    .header-search {
+      width: $mobile;
+      margin: auto;
+      @include shadow3;
+      padding: 1rem 1rem 0 1rem;
+      border-radius: $radius;
+
+      .search-input {
+        display: flex;
+        gap: 0.5rem;
+
+        .icon {
+          font-size: $afs;
+        }
+
+        .input-field {
+          @include inputField2;
+          cursor: pointer;
+
+          &::placeholder {
+            color: #8a8787;
+          }
+        }
+      }
+
+      .select-dates {
+        display: flex;
+        gap: 0.5rem;
+
+        .icon {
+          font-size: $afs;
+        }
+
+        .date-range {
+          @include inputField2;
+          color: #8a8787;
+          cursor: pointer;
+        }
+      }
+
+      .select-items {
+        display: flex;
+        gap: 0.5rem;
+
+        .icon {
+          font-size: $afs;
+        }
+        .select-quantity {
+          @include inputField2;
+          color: #8a8787;
+        }
+      }
+
+      .btn-container {
+        .search-btn {
+          @include button;
+        }
+      }
+
+      .icon {
+        color: $green;
+        display: flex;
+        align-self: center;
+      }
+    }
+  }
+}
+
+// Tablet styling
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .header {
+    width: 100%;
+    background-color: $header-bg;
+
+    .header-container {
+      position: relative;
+      width: 100%;
+      margin: auto;
+
+      .hotel-image {
+        display: block;
+        .image {
+          width: 100%;
+          height: 15rem;
+          object-fit: cover;
+        }
+      }
+
+      .header-title {
+        display: none;
+      }
+
+      // Header search
+      .header-search {
+        width: 100%;
+        max-width: $mobile;
+        margin: auto;
+        padding: 1.5rem 0;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 30px;
+        background-color: white;
+        position: absolute;
+        bottom: -2.8rem;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        .search-input {
+          display: flex;
+          gap: 0.5rem;
+          padding: 0;
+
+          .icon {
+            font-size: $afs;
+          }
+
+          .input-field {
+            @include inputField2;
+          }
+        }
+
+        .select-dates {
+          display: flex;
+          gap: 0.5rem;
+
+          .icon {
+            font-size: $afs;
+          }
+
+          .date-range {
+            @include inputField2;
+            font-size: $sfs;
+          }
+        }
+
+        .select-items {
+          display: flex;
+          gap: 0.5rem;
+
+          .icon {
+            font-size: $afs;
+          }
+
+          .select-quantity {
+            @include inputField2;
+            font-size: $sfs;
+          }
+        }
+
+        .btn-container {
+          .search-btn {
+            @include button;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Laptop styling
+@media screen and (min-width: 1024px) {
+  .header {
+    background-color: $header-bg;
+    display: flex;
+    justify-content: center;
+
+    .header-container {
+      position: relative;
+      width: 100%;
+
+      .hotel-image {
+        display: block;
+        .image {
+          width: 100%;
+          height: 33rem;
+          object-fit: cover;
+        }
+      }
+
+      .header-title {
+        display: block;
+        position: absolute;
+        top: 2rem;
+        left: 10%;
+        font-size: 1.5rem;
+      }
+
+      // Heaser search
+
+      .header-search {
+        position: absolute;
+        bottom: -2.8rem;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: $laptop;
+        margin: auto;
+        padding: 1.5rem 0;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 30px;
+        background-color: white;
+
+        .search-input {
+          display: flex;
+          gap: 0.5rem;
+
+          .icon {
+          }
+
+          .input-field {
+          }
+        }
+
+        .select-dates {
+          position: relative;
+          display: flex;
+          gap: 0.5rem;
+
+          .icon {
+          }
+
+          .date-range {
+          }
+
+          .date {
+            position: absolute;
+            bottom: 1.5rem;
+          }
+        }
+
+        .select-items {
+          position: relative;
+          display: flex;
+          gap: 0.5rem;
+
+          .icon {
+          }
+
+          .options {
+            position: absolute;
+            bottom: 1.5rem;
+            left: 3rem;
+            width: 240px;
+            background-color: #ffffff;
+            border-radius: $radius;
+
+            .option-item {
+              display: flex;
+              justify-content: space-between;
+              padding: 0.5rem 1rem;
+
+              .button-quantiy {
+                display: flex;
+                justify-content: space-between;
+              }
+
+              .btn-inc {
+                @include btn3;
+              }
+
+              .quantity {
+                margin: 0 0.5rem;
+                font-weight: $afw;
+              }
+
+              .btn-dec {
+                @include btn3;
+
+                &:disabled {
+                  cursor: not-allowed;
+                  background-color: $button-quantity-dec;
+                }
+              }
+            }
+          }
+
+          .select-quantity {
+          }
+        }
+
+        .btn-container {
+          .search-btn {
+          }
+        }
+      }
+    }
+
+    // hotel image styling for the hotels page
+    .header-container.pages {
+      .hotel-image {
+        .image {
+          width: 100%;
+          height: 35.6rem;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}

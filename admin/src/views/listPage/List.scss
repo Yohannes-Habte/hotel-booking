@@ -1,0 +1,12 @@
+@import "../../styles/Variables.scss";
+@import "../../styles/Mixins.scss";
+
+.list-page {
+    display: flex;
+    width: 100%;
+    
+    .list-container {
+        background-color: $main;
+        flex: 5;
+    }
+}

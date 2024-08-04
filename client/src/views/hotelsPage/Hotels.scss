@@ -1,0 +1,284 @@
+@import '../../styles/Variables.scss';
+@import '../../styles/Mixins.scss';
+
+// Mobile
+.hotels-page {
+    width: 100%;
+
+    .hotel-page-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .page-title {
+        @include title;
+      }
+
+      .search-hotels-wrapper {
+     
+        width: $mobile;
+        margin: 1rem auto;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        // Search styling
+        .search-container {
+          flex: 1;
+          @include shadow;
+          background-color: $sideNavbar-bg;
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+          height: fit-content;
+
+          .search-title {
+          }
+
+          .input-container {
+            .label {
+              @include label;
+            }
+
+            .input-field {
+              @include inputField2;
+            }
+
+            .dates-range {
+              @include inputField2;
+              cursor: pointer;
+            }
+          }
+
+          .Options-container {
+            .label {
+              @include label;
+            }
+
+            .options-items {
+              margin-left: 1rem;
+              display: flex;
+              justify-content: space-between;
+
+              .input-field {
+                width: 35%;
+                font-size: 1rem;
+                border: none;
+                border-radius: $radius;
+                outline: none;
+                padding: 0.3rem 0.5rem;
+                margin-bottom: 0.2rem;
+                background-color: #ffffff;
+              }
+            }
+
+          }
+
+          .button {
+            @include button;
+            margin-bottom: 0;
+          }
+        }
+
+        // Hotels styling
+        .hotels {
+          flex: 3;
+          @include shadow;
+
+          .hotel-title {
+          }
+        }
+      }
+    }
+  }
+
+// Tablet
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+ .hotels-page {
+    width: 100%;
+
+    .hotel-page-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .page-title {
+        @include title;
+      }
+
+      .search-hotels-wrapper {
+     
+        width: $tablet;
+        margin: 1rem auto;
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+
+        // Search styling
+        .search-container {
+          flex: 1;
+          position: sticky;
+          top: 1rem;
+          @include shadow;
+          background-color: $sideNavbar-bg;
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+          height: fit-content;
+
+          .search-title {
+          }
+
+          .input-container {
+            .label {
+              @include label;
+            }
+
+            .input-field {
+              @include inputField2;
+            }
+
+            .dates-range {
+              @include inputField2;
+              cursor: pointer;
+            }
+          }
+
+          .Options-container {
+            .label {
+              @include label;
+            }
+
+            .options-items {
+              margin-left: 1rem;
+              display: flex;
+              justify-content: space-between;
+              font-size: $sfs;
+
+              .input-field {
+                width: 35%;
+                font-size: 1rem;
+                border: none;
+                border-radius: $radius;
+                outline: none;
+                padding: 0.3rem 0.5rem;
+                margin-bottom: 0.2rem;
+                background-color: #ffffff;
+              }
+            }
+
+          }
+
+          .button {
+            @include button;
+            margin-bottom: 0;
+          }
+        }
+
+        // Hotels styling
+        .hotels {
+          flex: 3;
+          @include shadow;
+
+          .hotel-title {
+          }
+        }
+      }
+    }
+  }
+}
+
+// Labtop
+@media screen and (min-width: 1024px) {
+  .hotels-page {
+    width: 100%;
+
+    .hotel-page-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .page-title {
+        @include title;
+      }
+
+      .search-hotels-wrapper {
+     
+        width: $laptop;
+        margin: 1rem auto;
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+
+        // Search styling
+        .search-container {
+          flex: 1;
+          position: sticky;
+          top: 1rem;
+          @include shadow;
+          background-color: $sideNavbar-bg;
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+          height: fit-content;
+
+          .search-title {
+          }
+
+          .input-container {
+            .label {
+              @include label;
+            }
+
+            .input-field {
+              @include inputField2;
+            }
+
+            .dates-range {
+              @include inputField2;
+              cursor: pointer;
+            }
+          }
+
+          .Options-container {
+            .label {
+              @include label;
+            }
+
+            .options-items {
+              margin-left: 1rem;
+              display: flex;
+              justify-content: space-between;
+
+              .input-field {
+                width: 35%;
+                font-size: 1rem;
+                border: none;
+                border-radius: $radius;
+                outline: none;
+                padding: 0.3rem 0.5rem;
+                margin-bottom: 0.2rem;
+                background-color: #ffffff;
+              }
+            }
+
+          }
+
+          .button {
+            @include button;
+            margin-bottom: 0;
+          }
+        }
+
+        // Hotels styling
+        .hotels {
+          flex: 3;
+          @include shadow;
+
+          .hotel-title {
+          }
+        }
+      }
+    }
+  }
+}

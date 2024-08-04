@@ -1,0 +1,212 @@
+@import './Variables.scss';
+
+@mixin shadow {
+  padding: 1rem;
+  box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em,
+    rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+  border-radius: $radius;
+  line-height: 1.5rem;
+  margin: 1rem;
+}
+
+@mixin shadow2 {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  padding: 1rem;
+  border-radius: $radius;
+  line-height: 1.5rem;
+}
+
+@mixin imageSize {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+@mixin button {
+  margin: 1rem 0;
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: $buttonbg;
+  font-weight: $aafs;
+  font-size: $afs;
+  color: white;
+  border-radius: $radius;
+  cursor: pointer;
+  transition: 0.5s;
+
+  &:hover {
+    background-color: $button-hover;
+    color: $color;
+  }
+}
+
+@mixin title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $title;
+  font-size: $aafs;
+  font-weight: $aafw;
+  padding: $textPadding;
+  margin: 0.5rem 0;
+}
+
+@mixin subTitle {
+  color: $title;
+  font-size: $aafs;
+  font-weight: $aafw;
+  padding: $textPadding;
+  margin: 0.5rem 0;
+}
+
+@mixin input {
+  width: 100%;
+  padding: 0.5rem 1.5rem;
+  font-size: $afs;
+  border: 1px solid $title;
+  border-radius: 2rem;
+  outline: none;
+
+  &:hover {
+    outline: 1px solid $title;
+  }
+}
+
+@mixin label {
+  font-size: $afs;
+  padding: 0.2rem 0;
+  font-weight: 500;
+}
+
+@mixin inputLabel {
+  margin-top: 0.5rem;
+  & input {
+    display: block;
+    @include input;
+  }
+
+  & label {
+    display: block;
+    @include label;
+  }
+}
+
+// Form stayle
+
+@mixin form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-bottom: 0.4em;
+  border-radius: 25px;
+  transition: 0.4s ease-in-out;
+}
+
+@mixin inputContainer {
+  margin: 20px;
+  width: 90%;
+}
+
+@mixin inputField {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  outline: none;
+  background-color: transparent;
+}
+
+@mixin inputField2 {
+  display: none;
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  outline: none;
+  background-color: transparent;
+}
+
+@mixin inputLabel {
+  font-size: 1rem;
+  color: rgba(204, 204, 204, 0);
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+@mixin btn1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  cursor: pointer;
+  width: 150px;
+  height: 50px;
+  background-image: linear-gradient(to top, #d8d9db 0%, #fff 80%, #fdfdfd 100%);
+  border-radius: 30px;
+  border: 1px solid #8f9092;
+  transition: all 0.2s ease;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #606060;
+  text-shadow: 0 1px #fff;
+
+  &:hover {
+    box-shadow: 0 4px 3px 1px #fcfcfc, 0 6px 8px #d6d7d9, 0 -4px 4px #cecfd1,
+      0 -6px 4px #fefefe, inset 0 0 3px 3px #cecfd1;
+  }
+
+  &:active {
+    box-shadow: 0 4px 3px 1px #fcfcfc, 0 6px 8px #d6d7d9, 0 -4px 4px #cecfd1,
+      0 -6px 4px #fefefe, inset 0 0 5px 3px #999, inset 0 0 30px #aaa;
+  }
+
+  &:focus {
+    box-shadow: 0 4px 3px 1px #fcfcfc, 0 6px 8px #d6d7d9, 0 -4px 4px #cecfd1,
+      0 -6px 4px #fefefe, inset 0 0 5px 3px #999, inset 0 0 30px #aaa;
+  }
+}
+
+@mixin btn2 {
+  width: fit-content;
+  min-width: 60px;
+  height: 45px;
+  padding: 8px;
+  border-radius: 5px;
+  border: 2.5px solid #e0e1e4;
+  box-shadow: 0px 0px 20px -20px;
+  cursor: pointer;
+  background-color: white;
+  transition: all 0.2s ease-in-out 0ms;
+  user-select: none;
+  font-family: 'Poppins', sans-serif;
+
+  &:hover {
+    background-color: #f2f2f2;
+    box-shadow: 0px 0px 20px -18px;
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+
+// Table cell
+
+@mixin tableHeaderCell {
+  padding: 1rem 0.5rem;
+  font-weight: $aafw;
+}
+
+@mixin tableBodyCell {
+  border-bottom: 1px solid #ddd;
+  padding: 0.4rem 0.5rem;
+  width: 15rem;
+}

@@ -1,0 +1,153 @@
+@import './Variables.scss';
+@import './Mixins.scss';
+
+.app.dark {
+  width: 100%;
+  .home-page {
+    background-color: $darkMode-bg;
+    .home-contianer {
+      background-color: $darkMode-bg;
+    }
+  }
+
+  // List page
+  .list-page {
+    .list-container {
+      background-color: $darkMode-bg;
+      height: 100vh;
+    }
+  }
+
+  // Sidebar
+  .sidebar-header {
+    background-color: $darkMode-navbar-bg;
+    border-color: $darkMode-bg;
+
+    .sidebar {
+      background-color: $darkMode-navbar-bg;
+      border-color: $darkMode-bg;
+
+      .logo {
+        color: $darkMode-fontColor;
+      }
+
+      .horizontal-line {
+        height: 0;
+        border: 1px solid #777;
+      }
+
+      .item {
+        &:hover {
+          background-color: $darkMode-hover;
+        }
+        .sidebar-icon {
+          color: $darkMode-fontColor;
+        }
+      }
+    }
+  }
+
+  // Navbar
+  .navbar {
+    background-color: $darkMode-navbar-bg;
+    color: $darkMode-fontColor;
+
+    .search {
+      background-color: $darkMode-navbar-bg;
+      border: 1px solid $darkMode-fontColor;
+    }
+
+    .item {
+      .navbar-icon {
+        color: $darkMode-fontColor;
+      }
+    }
+  }
+
+  // Widget
+  .widget {
+    background-color: $darkMode-bg;
+
+    .title,
+    .counter {
+      color: $darkMode-fontColor;
+    }
+
+    .link {
+      color: lightseagreen;
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: underline;
+        color: red;
+      }
+    }
+  }
+
+  // Featured Chart
+  .featured-chart {
+    background-color: $darkMode-bg;
+  }
+
+  // Chart
+  .chart {
+    background-color: $darkMode-bg;
+
+    .revenue {
+      color: $darkMode-fontColor;
+      text-align: center;
+    }
+  }
+
+  // Normal table
+  .table-container {
+    background-color: $darkMode-bg;
+
+    .table-cell {
+      color: $darkMode-fontColor;
+      background-color: $darkMode-navbar-bg;
+    }
+    .cell-content {
+      color: $darkMode-fontColor;
+      .status {
+        &.Approved {
+          background: none;
+        }
+
+        &.Pending {
+          background: none;
+          color: #b08a8a;
+        }
+      }
+    }
+
+    .TableCel {
+      color: $darkMode-fontColor;
+    }
+  }
+
+  // User data table
+  .users-data-table {
+    background-color: $darkMode-bg;
+
+    .head-cell {
+      background-color: $darkMode-navbar-bg;
+      color: $darkMode-fontColor;
+    }
+
+    .table-body-row {
+      color: $darkMode-fontColor;
+    }
+  }
+
+  // New page
+  .new-page {
+    .new-page-container {
+      background-color: $darkMode-bg;
+
+      .file-label {
+        color: $darkMode-fontColor;
+      }
+    }
+  }
+}

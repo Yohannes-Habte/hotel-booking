@@ -1,0 +1,25 @@
+@import '../../styles/Variables.scss';
+@import '../../styles/Mixins.scss';
+
+.boxAlignment{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40%;
+}
+
+.paymentBox{
+    color: $main;
+    height: 25vh;
+    align-items: center;
+    text-align: center;
+    border: 1px solid $main;
+    border-radius: 5px;
+    padding: 1rem;
+    margin: 3rem;
+    background-color: white;
+}
+
+h2{
+    margin: 1rem;
+}

@@ -1,0 +1,108 @@
+@import '../../styles/Variables.scss';
+@import '../../styles/Mixins.scss';
+
+// Mobile
+.pagement-page {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .pagement-container {
+    width: 50%;
+    @include shadow2;
+
+    .payment-title {
+      @include title;
+    }
+
+    .reservation-details {
+      .hotel-name {
+        font-size: $afs;
+      }
+      .reserved-rooms {
+      }
+      .services {
+      }
+      .total-price {
+      }
+    }
+
+    .payment-btn {
+      @include button;
+    }
+  }
+}
+
+// Table
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .pagement-page {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .pagement-container {
+      width: 50%;
+      @include shadow2;
+
+      .payment-title {
+        @include title;
+      }
+
+      .reservation-details {
+        .hotel-name {
+          font-size: $afs;
+        }
+        .reserved-rooms {
+        }
+        .services {
+        }
+        .total-price {
+        }
+      }
+
+      .payment-btn {
+        @include button;
+      }
+    }
+  }
+}
+
+// Laptop
+@media screen and (min-width: 1024px) {
+  .payement-page {
+    width: 100%;
+    height: 100vh;
+  
+
+    .payement-container {
+      width: 50%;
+      margin: 2rem auto;
+      @include shadow2;
+
+      .payment-title {
+        @include title;
+      }
+
+      .reservation-details {
+        .hotel-name {
+          font-size: $afs;
+        }
+        .reserved-rooms {
+        }
+        .services {
+        }
+        .total-price {
+        }
+      }
+
+      .payment-btn {
+        @include button;
+      }
+    }
+  }
+}

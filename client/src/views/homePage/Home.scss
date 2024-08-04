@@ -1,0 +1,87 @@
+@import '../../styles/Variables.scss';
+@import '../../styles/Mixins.scss';
+
+// Mobile
+.home-page {
+  width: 100%;
+
+  .home-container {
+    width: 100%;
+    max-width: $mobile;
+    margin: 1rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .country-hotel-title {
+      @include title;
+    }
+
+    .city-hotel-title {
+      display: none;
+    }
+
+    .modern-hotel-title {
+      @include subTitle;
+    }
+  }
+}
+
+// Table
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .home-page {
+    width: 100%;
+
+    .home-container {
+      width: 100%;
+      max-width: $tablet;
+      margin: 1rem auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .country-hotel-title {
+        @include title;
+      }
+
+      .city-hotel-title {
+        display: none;
+      }
+
+      .modern-hotel-title {
+        @include subTitle;
+      }
+    }
+  }
+}
+
+// Labtop
+@media screen and (min-width: 1024px) {
+  .home-page {
+    width: 100%;
+
+    .home-container {
+      width: 100%;
+      max-width: $laptop;
+      margin: 1rem auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .country-hotel-title {
+        @include title;
+      }
+
+      .city-hotel-title {
+        display: block;
+        @include subTitle;
+        text-align: left;
+      }
+
+      .modern-hotel-title {
+        @include subTitle;
+        text-align: left;
+      }
+    }
+  }
+}

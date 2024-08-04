@@ -1,0 +1,383 @@
+@import '../../styles/Variables.scss';
+@import '../../styles/Mixins.scss';
+
+/* Mobile screen size */
+.sidebar-header {
+  background-color: #c5d5f6;
+  border-right: 0.5px solid #222;
+  position: relative;
+
+  .hotel-logo {
+    @include title;
+  }
+
+  .sidebar {
+    flex: 1;
+    padding: 0 0.5rem;
+    width: 11rem;
+    margin-left: -11rem;
+    height: 2rem;
+
+    .sidbar-logo {
+      height: 4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .logo {
+        font-size: $aafs;
+        font-weight: $aafw;
+        color: $logo;
+      }
+    }
+
+    .horizontal-line {
+      height: 0;
+      border: $border;
+    }
+
+    .sidbar-lists {
+      padding-left: 1rem;
+
+      .list-items {
+        .sub-title {
+          text-transform: uppercase;
+          font-size: 0.6rem;
+          color: gray;
+          margin-top: 1rem;
+          margin-bottom: 0.5rem;
+          display: flex;
+          align-items: center;
+        }
+        .item {
+          padding: 0.2rem 0.8rem;
+          cursor: pointer;
+
+          &:hover {
+            background-color: $sidebar;
+          }
+
+          .sidebar-icon {
+            color: $title;
+          }
+
+          .span-text {
+            font-size: 1rem;
+            font-weight: $afw;
+            color: gray;
+
+            &:hover {
+              color: $font;
+            }
+          }
+        }
+      }
+    }
+
+    .backgroung-color {
+      padding-left: 1rem;
+      .bg-title {
+        text-transform: uppercase;
+        font-size: 0.6rem;
+        color: gray;
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+        display: flex;
+        align-items: center;
+      }
+
+      .color-options {
+        display: flex;
+        align-items: center;
+        margin: 1rem;
+        gap: 1rem;
+        .color-option {
+          width: 1.5rem;
+          height: 1.5rem;
+          border-radius: $radius;
+          border: 1px solid purple;
+          cursor: pointer;
+
+          &:nth-child(1) {
+            background-color: #f0f8ff;
+          }
+
+          &:nth-child(2) {
+            background-color: gray;
+          }
+
+          &:nth-child(3) {
+            background-color: #000000;
+          }
+        }
+      }
+    }
+  }
+
+  .active-sidebar {
+    margin-left: 0;
+    height: fit-content;
+    padding: 0 0 1rem 0;
+  }
+
+  .hamburger-menu {
+    display: block;
+    width: 100%;
+    padding-left: 1rem;
+    font-size: 1.8rem;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    .fa-times {
+      margin-left: 90%;
+      margin-top: 0.2rem;
+    }
+  }
+}
+
+/* Tablet screen size */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .sidebar-header {
+    width: 100%;
+    background-color: #c5d5f6;
+    border-right: 0.5px solid #222;
+    position: relative;
+
+    .sidebar {
+      flex: 1;
+      padding: 0 0.5rem;
+      width: 12rem;
+      margin-left: -12rem;
+      height: 4rem;
+
+      .sidbar-logo {
+        height: 4rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .logo {
+          font-size: $aafs;
+          font-weight: $aafw;
+          color: $logo;
+        }
+      }
+
+      .horizontal-line {
+        height: 0;
+        border: $border;
+      }
+
+      .sidbar-lists {
+        padding-left: 1rem;
+
+        .list-items {
+          .sub-title {
+            text-transform: uppercase;
+            font-size: 0.6rem;
+            color: gray;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+          }
+          .item {
+            padding: 0.2rem 0.8rem;
+            cursor: pointer;
+
+            &:hover {
+              background-color: $sidebar;
+            }
+
+            .sidebar-icon {
+              color: $title;
+            }
+
+            .span-text {
+              font-size: 1rem;
+              font-weight: $afw;
+              color: gray;
+
+              &:hover {
+                color: $font;
+              }
+            }
+          }
+        }
+      }
+
+      .backgroung-color {
+        padding-left: 1rem;
+        .bg-title {
+          text-transform: uppercase;
+          font-size: 0.6rem;
+          color: gray;
+          margin-top: 1rem;
+          margin-bottom: 0.5rem;
+          display: flex;
+          align-items: center;
+        }
+
+        .color-options {
+          display: flex;
+          align-items: center;
+          margin: 1rem;
+          gap: 1rem;
+          .color-option {
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: $radius;
+            border: 1px solid purple;
+            cursor: pointer;
+
+            &:nth-child(1) {
+              background-color: #f0f8ff;
+            }
+
+            &:nth-child(2) {
+              background-color: gray;
+            }
+
+            &:nth-child(3) {
+              background-color: #000000;
+            }
+          }
+        }
+      }
+    }
+
+    .active-sidebar {
+      margin-left: 0;
+      height: fit-content;
+      padding: 0 0 1rem 0;
+    }
+
+    .hamburger-menu {
+      display: block;
+      padding-left: 1rem;
+      font-size: 1.8rem;
+      cursor: pointer;
+      position: absolute;
+      top: 1rem;
+      left: 0;
+    }
+  }
+}
+
+/* Labtop screen size */
+@media screen and (min-width: 1024px) {
+  .sidebar-header {
+    background-color: $aside;
+    border-right: 0.5px solid #222;
+    height: 100vh;
+
+    .sidebar {
+      flex: 1;
+      width: 12rem;
+      padding: 0 0.5rem;
+      margin-left: 0;
+
+      .sidbar-logo {
+        height: 4rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .logo {
+          font-size: $aafs;
+          font-weight: $aafw;
+          color: $logo;
+        }
+      }
+
+      .horizontal-line {
+        height: 0;
+        border: $border;
+      }
+
+      .sidbar-lists {
+        padding-left: 1rem;
+
+        .list-items {
+          .sub-title {
+            text-transform: uppercase;
+            font-size: 0.6rem;
+            color: gray;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+          }
+          .item {
+            padding: 0.2rem 0.8rem;
+            cursor: pointer;
+
+            &:hover {
+              background-color: $sidebar;
+            }
+
+            .sidebar-icon {
+              color: $title;
+              margin-right: 0.5rem;
+            }
+
+            .span-text {
+              font-size: 1rem;
+              font-weight: $afw;
+              color: gray;
+
+              &:hover {
+                color: $font;
+              }
+            }
+          }
+        }
+      }
+
+      .backgroung-color {
+        padding-left: 1rem;
+        .bg-title {
+          text-transform: uppercase;
+          font-size: 0.6rem;
+          color: gray;
+          margin-top: 1rem;
+          margin-bottom: 0.5rem;
+          display: flex;
+          align-items: center;
+        }
+
+        .color-options {
+          display: flex;
+          align-items: center;
+          margin: 1rem;
+          gap: 1rem;
+          .color-option {
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: $radius;
+            border: 1px solid purple;
+            cursor: pointer;
+
+            &:nth-child(1) {
+              background-color: #f0f8ff;
+            }
+
+            &:nth-child(2) {
+              background-color: gray;
+            }
+
+            &:nth-child(3) {
+              background-color: #000000;
+            }
+          }
+        }
+      }
+    }
+
+    .hamburger-menu {
+      display: none;
+    }
+  }
+}

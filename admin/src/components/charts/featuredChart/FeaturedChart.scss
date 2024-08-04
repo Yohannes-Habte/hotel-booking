@@ -1,0 +1,79 @@
+@import '../../../styles/Variables.scss';
+@import '../../../styles/Mixins.scss';
+
+
+.featured-chart {
+  flex: 2;
+  @include shadow;
+
+  .total-revenue {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: gray;
+  }
+
+  .details-container {
+    padding: 0.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .chart {
+        box-shadow: none;
+        width: 100px;
+        height: 100px;
+    }
+
+    .title {
+      font-weight: $aafw;
+      color: gray;
+    }
+
+    .amount {
+      font-size: $lfs;
+      font-weight: $lfw;
+      color: gray;
+    }
+
+    .description {
+      font-weight: $sfw;
+      font-size: $sfs;
+      color: gray;
+      text-align: center;
+    }
+
+    .summary {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 1rem;
+
+      .item {
+        text-align: center;
+
+        .item-title {
+          font-size: $sfw;
+          color: gray;
+        }
+
+        .item-result {
+          display: flex;
+          align-items: center;
+          margin-top: 10px;
+          font-size: $afs;
+
+          &.positive {
+            color: $title;
+          }
+
+          &.negative {
+            color: $color;
+          }
+        }
+      }
+    }
+  }
+}

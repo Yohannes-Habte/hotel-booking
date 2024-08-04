@@ -1,0 +1,178 @@
+@import '../../styles/Variables.scss';
+@import '../../styles/Mixins.scss';
+
+/* Mobile screen size */
+.widget {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  @include shadow;
+  box-shadow: inset 0 0 1px;
+
+  .widget-left, 
+  .widget-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .title {
+      font-weight: $lfw;
+      color: gray;
+      font-size: $afs;
+    }
+
+    .counter {
+      font-weight: $afw;
+      color: gray;
+      font-size: $afs;
+      width: max-content;
+    }
+
+    .link {
+      font-weight: $lfw;
+      color: gray;
+      font-size: $sfs;
+      width: max-content;
+    }
+
+    .percentage {
+      display: flex;
+      align-items: center;
+      font-size: $afs;
+
+      &.positive {
+        color: $title;
+      }
+
+      &.negative {
+        color: $font;
+      }
+    }
+
+    .icon {
+      font-size: $lfs;
+      padding: 0.5rem;
+      border-radius: $radius;
+      align-self: flex-end;
+    }
+  }
+}
+
+
+/* Tablet screen size */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .widget {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    @include shadow;
+    box-shadow: inset 0 0 1px;
+  
+    .widget-left, 
+    .widget-right {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+  
+      .title {
+        font-weight: $lfw;
+        color: gray;
+        font-size: $afs;
+      }
+  
+      .counter {
+        font-weight: $afw;
+        color: gray;
+        font-size: $afs;
+        width: max-content;
+      }
+  
+      .link {
+        font-weight: $lfw;
+        color: gray;
+        font-size: $sfs;
+        width: max-content;
+      }
+  
+      .percentage {
+        display: flex;
+        align-items: center;
+        font-size: $afs;
+  
+        &.positive {
+          color: $title;
+        }
+  
+        &.negative {
+          color: $font;
+        }
+      }
+  
+      .icon {
+        font-size: $lfs;
+        padding: 0.5rem;
+        border-radius: $radius;
+        align-self: flex-end;
+      }
+    }
+  }
+}
+
+/* Labtop screen size */
+@media screen and (min-width: 1024px) {
+.widget {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  @include shadow;
+  box-shadow: inset 0 0 1px;
+
+  .widget-left, 
+  .widget-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .title {
+      font-weight: $lfw;
+      color: gray;
+      font-size: $afs;
+    }
+
+    .counter {
+      font-weight: $afw;
+      color: gray;
+      font-size: $afs;
+      width: max-content;
+    }
+
+    .link {
+      font-weight: $lfw;
+      color: gray;
+      font-size: $sfs;
+      width: max-content;
+    }
+
+    .percentage {
+      display: flex;
+      align-items: center;
+      font-size: $afs;
+
+      &.positive {
+        color: $title;
+      }
+
+      &.negative {
+        color: $font;
+      }
+    }
+
+    .icon {
+      font-size: $lfs;
+      padding: 0.5rem;
+      border-radius: $radius;
+      align-self: flex-end;
+    }
+  }
+}
+}

@@ -1,0 +1,28 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+
+//  Checkout steps for hotel reservation order
+
+.hotel-reservation-checkout-steps{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  padding: 1rem;
+}
+
+.hotel-reservation-checkout-steps > div {
+  border-bottom: 0.2rem solid #a0a0a0;
+  color: #000000;
+  font-size: 1rem;
+}
+
+.hotel-reservation-checkout-steps > div.active {
+  border-bottom: 0.2rem solid #f08000;
+  color: #008000;
+  font-size: 1rem;
+}

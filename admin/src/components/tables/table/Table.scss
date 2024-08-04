@@ -1,0 +1,209 @@
+@import '../../../styles/Variables.scss';
+@import '../../../styles/Mixins.scss';
+
+/* Mobile screen size */
+.table-container {
+  .table-title {
+    font-size: 1.3rem;
+    color: gray;
+    font-weight: $afw;
+    padding: 1rem 0.5rem;
+  }
+
+  .table {
+    width: 100%;
+    .table-cell {
+      font-weight: $aafw;
+      border-bottom: 1px solid #ddd;
+      padding: 0.3rem 0.5rem;
+    }
+
+    .table-header {
+      background-color: #e6e6fa;
+
+      .header-row {
+        .table-header-id {
+          @include tableHeaderCell;
+        }
+
+        .table-header-hotel {
+          @include tableHeaderCell;
+        }
+
+        .table-header-type {
+          display: none;
+        }
+
+        .table-header-city {
+          display: none;
+        }
+
+        .table-header-price {
+          @include tableHeaderCell;
+        }
+      }
+    }
+
+    .table-body {
+      .hotel-id {
+        @include tableBodyCell;
+      }
+
+      .hotel-name {
+        @include tableBodyCell;
+      }
+
+      .hotel-type {
+        display: none;
+        @include tableBodyCell;
+      }
+
+      .hotel-location {
+        display: none;
+        @include tableBodyCell;
+      }
+
+      .hotel-price {
+        @include tableBodyCell;
+      }
+    }
+  }
+}
+
+/* Tablet screen size */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .table-container {
+    .table-title {
+      font-size: 1.3rem;
+      color: gray;
+      font-weight: $afw;
+      padding: 1rem 0.5rem;
+    }
+
+    .table {
+      width: 100%;
+      .table-cell {
+        font-weight: $aafw;
+        border-bottom: 1px solid #ddd;
+        padding: 0.3rem 0.5rem;
+      }
+
+      .table-header {
+        background-color: #e6e6fa;
+
+        .header-row {
+          .table-header-id {
+            @include tableHeaderCell;
+          }
+
+          .table-header-hotel {
+            @include tableHeaderCell;
+          }
+
+          .table-header-type {
+            @include tableHeaderCell;
+          }
+
+          .table-header-city {
+            @include tableHeaderCell;
+          }
+
+          .table-header-price {
+            @include tableHeaderCell;
+          }
+        }
+      }
+
+      .table-body {
+        .hotel-id {
+          @include tableBodyCell;
+        }
+
+        .hotel-name {
+          @include tableBodyCell;
+        }
+
+        .hotel-type {
+          @include tableBodyCell;
+        }
+
+        .hotel-location {
+          @include tableBodyCell;
+        }
+
+        .hotel-price {
+          @include tableBodyCell;
+        }
+      }
+    }
+  }
+}
+
+/* Labtop screen size */
+@media screen and (min-width: 1024px) {
+  .table-container {
+    .table-title {
+      font-size: 1.3rem;
+      color: gray;
+      font-weight: $afw;
+      padding: 1rem 0.5rem;
+    }
+
+    .table {
+      width: 100%;
+      .table-cell {
+        font-weight: $aafw;
+        border-bottom: 1px solid #ddd;
+        padding: 0.3rem 0.5rem;
+      }
+
+      .table-header {
+        background-color: #e6e6fa;
+
+        .header-row {
+          .table-header-id {
+            @include tableHeaderCell;
+          }
+
+          .table-header-hotel {
+            @include tableHeaderCell;
+          }
+
+          .table-header-type {
+            @include tableHeaderCell;
+          }
+
+          .table-header-city {
+            @include tableHeaderCell;
+          }
+
+          .table-header-price {
+            @include tableHeaderCell;
+          }
+        }
+      }
+
+      .table-body {
+        .hotel-id {
+          @include tableBodyCell;
+        }
+
+        .hotel-name {
+          @include tableBodyCell;
+        }
+
+        .hotel-type {
+          @include tableBodyCell;
+        }
+
+        .hotel-location {
+          @include tableBodyCell;
+        }
+
+        .hotel-price {
+          @include tableBodyCell;
+        }
+      }
+    }
+  }
+}

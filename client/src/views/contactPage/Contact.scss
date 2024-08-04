@@ -1,0 +1,644 @@
+@import '../../styles/Variables.scss';
+@import '../../styles/Mixins.scss';
+
+// Mobile styling
+.contact-page {
+  width: 100%;
+  .contact-container {
+    width: 100%;
+    max-width: $mobile;
+    margin: 1rem auto;
+    display: flex;
+    flex-direction: column;
+
+    .title {
+      @include titleMobile;
+    }
+
+    .form-communication-tools {
+      .form-container {
+        @include shadow2;
+
+        .sub-title {
+          font-size: $afs;
+        }
+        .contact-form {
+          .user-data {
+            .input-container {
+              margin: 1rem 0;
+              .input-field {
+                @include inputField3;
+              }
+            }
+
+            .input-files-container {
+              padding: 1rem 0;
+              position: relative;
+
+              .input-file {
+                width: 100%;
+                position: relative;
+                @include input;
+                z-index: 2;
+                cursor: pointer;
+                opacity: 0;
+              }
+
+              .file-btn {
+                position: absolute;
+                top: 0.3rem;
+                left: 0.3rem;
+                right: 0.3rem;
+                width: 100%;
+                height: 2rem;
+                width: 98%;
+                margin: auto;
+                border-radius: 0.2rem;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                border: 1px solid green;
+                background-color: #ffffff;
+                padding: 1.1rem 0;
+                z-index: 1;
+                cursor: pointer;
+                transition: 0.5s;
+
+                .icon {
+                  font-size: 1rem;
+                  margin: 0 0.5rem;
+                  color: green;
+                }
+
+                .supported-files {
+                  margin-left: 1rem;
+                }
+              }
+
+              &:hover {
+                button {
+                  background-color: #e7c1c1;
+                  color: #ff0000;
+                }
+              }
+            }
+          }
+
+          .text-message {
+            margin-top: -1rem;
+            & textarea {
+              width: 100%;
+              padding: 1rem;
+              font-size: 1.1rem;
+              border: 1px solid $title;
+            }
+          }
+
+          .contact-form-btn {
+            @include button;
+          }
+        }
+      }
+
+      .fast-contact-tools {
+        @include shadow2;
+        .sub-title {
+          font-size: $afs;
+          margin-bottom: 0.5rem;
+        }
+
+        .image-display {
+          display: none;
+
+          .image {
+          }
+        }
+
+        .contact-tools {
+          display: flex;
+          gap: 1rem;
+          .contact-icon {
+          }
+
+          .link-container {
+            .link {
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .public-comments {
+    width: 100%;
+    max-width: $laptop;
+    margin: 1rem auto;
+    .comment-title {
+      @include title;
+    }
+
+    .comments {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      .single-comment {
+        position: relative;
+        @include shadow;
+        padding: 0.5rem;
+
+        .name-email {
+          display: flex;
+          justify-content: space-around;
+          margin: 0.5rem 0;
+          @include shadow2;
+
+          .name {
+            font-size: $afs;
+          }
+          .email {
+            font-size: $afs;
+          }
+        }
+
+        .message {
+          font-size: $afs;
+          @include shadow2;
+        }
+
+        .photo-container {
+          display: flex;
+          justify-content: center;
+          .photo {
+            width: 15rem;
+            height: 15rem;
+            object-fit: cover;
+            border-radius: $radius;
+          }
+        }
+
+        .message {
+        }
+
+        .close-icon {
+          position: absolute;
+          top: 0.5rem;
+          right: 0.5rem;
+          font-size: $afs;
+          cursor: pointer;
+
+          &:hover {
+            color: $hover-text;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Tablet styling
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .contact-page {
+    .contact-container {
+      width: 100%;
+      max-width: $tablet;
+      margin: auto;
+
+      .title {
+        @include title;
+      }
+
+      .form-communication-tools {
+        width: 100%;
+        max-width: $tablet;
+        margin: 1rem auto;
+        display: flex;
+        flex-direction: column;
+    
+
+        .form-container {
+          .sub-title {
+            @include subTitle;
+            color: #000000;
+          }
+          .contact-form {
+            .user-data {
+              
+              .input-container {
+                margin: 1rem 0;
+                .input-field {
+                  @include inputField3;
+                }
+              }
+
+              .input-files-container {
+                padding: 1rem 0;
+                position: relative;
+  
+                .input-file {
+                  width: 100%;
+                  position: relative;
+                  @include input;
+                  z-index: 2;
+                  cursor: pointer;
+                  opacity: 0;
+                }
+  
+                .file-btn {
+                  position: absolute;
+                  top: 0.3rem;
+                  left: 0.3rem;
+                  right: 0.3rem;
+                  width: 100%;
+                  height: 2rem;
+                  width: 98%;
+                  margin: auto;
+                  border-radius: 0.2rem;
+                  display: flex;
+                  justify-content: flex-start;
+                  align-items: center;
+                  border: 1px solid green;
+                  background-color: #ffffff;
+                  padding: 1.1rem 0;
+                  z-index: 1;
+                  cursor: pointer;
+                  transition: 0.5s;
+  
+                  .icon {
+                    font-size: 1rem;
+                    margin: 0 0.5rem;
+                    color: green;
+                  }
+  
+                  .supported-files {
+                    margin-left: 1rem;
+                  }
+                }
+  
+                &:hover {
+                  button {
+                    background-color: #e7c1c1;
+                    color: #ff0000;
+                  }
+                }
+              }
+              
+            }
+
+            .text-message {
+              margin-top: -1rem;
+              & textarea {
+                width: 100%;
+                padding: 1rem;
+                font-size: 1.1rem;
+                border: 1px solid $title;
+              }
+            }
+
+            
+
+            .contact-form-btn {
+            }
+          }
+        }
+
+        .fast-contact-tools {
+          .sub-title {
+          }
+
+          .contact-tools {
+            .contact-icon {
+            }
+
+            .link-container {
+              .link {
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .public-comments {
+      width: 100%;
+      max-width: $laptop;
+      margin: 1rem auto;
+      .comment-title {
+        @include title;
+      }
+
+      .comments {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 1rem;
+        row-gap: 1rem;
+
+        .single-comment {
+          position: relative;
+          @include shadow;
+          padding: 0.5rem;
+
+          .name-email {
+            display: flex;
+            justify-content: space-around;
+            margin: 0.5rem 0;
+            @include shadow2;
+
+            .name {
+              font-size: $afs;
+            }
+            .email {
+              font-size: $afs;
+            }
+          }
+
+          .message {
+            font-size: $afs;
+            @include shadow2;
+          }
+
+          .photo-container {
+            display: flex;
+            justify-content: center;
+            .photo {
+              width: 15rem;
+              height: 15rem;
+              object-fit: cover;
+              border-radius: $radius;
+            }
+          }
+
+          .message {
+          }
+
+          .close-icon {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            font-size: $afs;
+            cursor: pointer;
+
+            &:hover {
+              color: $hover-text;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Desktop Styling
+@media screen and (min-width: 1024px) {
+  .contact-page {
+    position: relative;
+
+    .contact-container {
+      position: absolute;
+      top: 1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: $max-width;
+      margin: 1rem auto;
+      opacity: 0;
+    }
+
+    .contact-container:hover {
+      position: absolute;
+      top: 1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: $max-width;
+      margin: 1rem auto;
+      opacity: 1;
+
+      .title {
+        @include title;
+        color: black;
+      }
+
+      .form-communication-tools {
+        width: 100%;
+        max-width: 1024px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 65% 35%;
+        column-gap: 1rem;
+
+        .form-container {
+          padding: 0.5rem 1rem;
+          border: 1px solid #ffffff;
+          border-radius: $radius;
+
+          .sub-title {
+            @include subTitle;
+            color: white;
+          }
+          .contact-form {
+            .user-data {
+              display: grid;
+              grid-template-columns: repeat(2, 1fr);
+              column-gap: 1rem;
+
+              .input-container {
+                margin: 1rem 0;
+                .input-field {
+                  @include inputField3;
+                }
+              }
+
+              .input-files-container {
+                padding: 1rem 0;
+                position: relative;
+
+                .input-file {
+                  width: 100%;
+                  position: relative;
+                  @include input;
+                  z-index: 2;
+                  cursor: pointer;
+                  opacity: 0;
+                }
+
+                .file-btn {
+                  position: absolute;
+                  top: 1rem;
+                  left: 0.3rem;
+                  right: 0.3rem;
+                  width: 100%;
+                  height: 2rem;
+                  width: 98%;
+                  margin: auto;
+                  border-radius: 0.2rem;
+                  display: flex;
+                  justify-content: flex-start;
+                  align-items: center;
+                  border: 1px solid green;
+                  background-color: #ffffff;
+                  padding: 1.1rem 0;
+                  z-index: 1;
+                  cursor: pointer;
+                  transition: 0.5s;
+
+                  .icon {
+                    font-size: 1rem;
+                    margin: 0 0.5rem;
+                    color: green;
+                  }
+
+                  .supported-files {
+                    margin-left: 1rem;
+                  }
+                }
+
+                &:hover {
+                  button {
+                    background-color: #e7c1c1;
+                    color: #ff0000;
+                  }
+                }
+              }
+            }
+
+            .text-message {
+              & textarea {
+                width: 100%;
+                padding: 1rem;
+                font-size: 1.1rem;
+              }
+            }
+
+            .contact-form-btn {
+              @include button;
+            }
+          }
+        }
+
+        .fast-contact-tools {
+          border: 1px solid #ffffff;
+          border-radius: $radius;
+          padding: 1rem;
+
+          .sub-title {
+            @include subTitle;
+            font-size: 1.4rem;
+            color: #ffffff;
+          }
+
+          .image-display {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 3rem;
+
+            .image {
+              width: 10rem;
+              height: 10rem;
+              object-fit: cover;
+              border-radius: 50%;
+            }
+          }
+
+          .contact-tools {
+            display: flex;
+            gap: 1rem;
+
+            .contact-icon {
+              font-size: 2rem;
+              color: #ffffff;
+              margin-right: 1rem;
+              cursor: pointer;
+            }
+
+            .link-container {
+              .link {
+                color: #ffffff;
+                font-weight: bold;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // Public comments styling
+
+    .public-comments {
+      width: 100%;
+      max-width: $laptop;
+      margin: 1rem auto;
+      .comment-title {
+        @include title;
+      }
+
+      .comments {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 1rem;
+        row-gap: 1rem;
+
+        .single-comment {
+          position: relative;
+          @include shadow;
+          padding: 0.5rem;
+
+          .name-email {
+            display: flex;
+            justify-content: space-around;
+            margin: 0.5rem 0;
+            @include shadow2;
+
+            .name {
+              font-size: $afs;
+            }
+            .email {
+              font-size: $afs;
+            }
+          }
+
+          .message {
+            font-size: $afs;
+            @include shadow2;
+          }
+
+          .photo-container {
+            display: flex;
+            justify-content: center;
+            .photo {
+              width: 15rem;
+              height: 15rem;
+              object-fit: cover;
+              border-radius: $radius;
+            }
+          }
+
+          .message {
+          }
+
+          .close-icon {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            font-size: $afs;
+            cursor: pointer;
+
+            &:hover {
+              color: $hover-text;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.errorVisible {
+  display: block;
+  color: red;
+}
+
+.errorInvisible {
+  display: none;
+}

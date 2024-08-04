@@ -1,0 +1,475 @@
+@import '../../styles/Variables.scss';
+@import '../../styles/Mixins.scss';
+
+.register-page {
+  width: 100%;
+  padding: 1rem;
+
+  .register-form-container {
+    width: $mobile;
+    margin: auto;
+    @include shadow;
+
+    .register-field {
+      border: none;
+    }
+
+    .register-legend {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 700;
+      padding-top: 2rem;
+    }
+
+    .register-form {
+      padding: 1rem;
+
+      .register-input-fields-container {
+        z-index: 1;
+
+        .input-container {
+          position: relative;
+
+          .input-field {
+            @include inputField;
+            background-color: white;
+          }
+
+          .input-label {
+            @include inputLabel;
+            position: absolute;
+            top: 0;
+            left: 1.5rem;
+            color: rgba(204, 204, 204, 0);
+          }
+
+          .input-highlight {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 2px;
+            background-color: $title;
+            transition: all 0.3s ease;
+          }
+
+          .input-field:focus + .input-label {
+            top: -1rem;
+            font-size: $afs;
+            color: #007bff;
+          }
+
+          .input-field:focus + .input-label + .input-highlight {
+            width: 100%;
+          }
+
+          .input-icon {
+            position: absolute;
+            top: 50%;
+            left: 0.5rem;
+            transform: translateY(-50%);
+          }
+
+          // displaying password
+          .password-display {
+            position: absolute;
+            top: 50%;
+            right: 1rem;
+            transform: translatey(-50%);
+            font-size: 1.3rem;
+            cursor: pointer;
+          }
+
+          .confirm-password-display {
+            position: absolute;
+            top: 50%;
+            right: 1rem;
+            transform: translatey(-50%);
+            font-size: 1.3rem;
+            cursor: pointer;
+          }
+        }
+      }
+
+      .cosent-and-others-container {
+        display: flex;
+        flex-direction: column;
+
+        .consent-terms-button-login-container {
+          margin-bottom: 1rem;
+
+          .register-consent {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 0.5rem;
+            padding: 1rem;
+
+            .register-consent-input {
+              margin-right: 0;
+            }
+
+            .accept {
+              font-size: 1.3rem;
+            }
+
+            .link {
+              font-size: 1.3rem;
+              color: blue;
+            }
+          }
+
+          .register-button {
+            @include btn1;
+          }
+
+          .haveAccount {
+            font-size: 1.2rem;
+            margin-top: 1.5rem;
+
+            & a {
+              font-weight: bold;
+              color: blue;
+            }
+          }
+        }
+        .password-preconditions {
+          .password-checkbox {
+            background-color: transparent;
+            border: 1px solid $title;
+            padding: 1rem;
+            border-radius: 0.5rem;
+
+            .text {
+              line-height: 2rem;
+              font-size: 1rem;
+              .indicator {
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// styling the checkbox
+.register-consent-input[type='checkbox'] {
+  width: 30px;
+  height: 20px;
+}
+
+/* Tablet screen size */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .register-page {
+    width: 100%;
+    padding: 1rem;
+
+    .register-form-container {
+      width: $tablet;
+      margin: auto;
+      @include shadow;
+
+      .register-field {
+        border: none;
+      }
+
+      .register-legend {
+        text-align: center;
+        font-size: 2rem;
+        font-weight: 700;
+        padding-top: 1rem;
+      }
+
+      .register-form {
+        padding: 1rem;
+
+        .register-input-fields-container {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          column-gap: 1rem;
+          row-gap: 0.2rem;
+          padding: 1rem;
+          z-index: 1;
+
+          .input-container {
+            position: relative;
+
+            .input-field {
+              @include inputField;
+              background-color: white;
+            }
+
+            .input-label {
+              @include inputLabel;
+              position: absolute;
+              top: 0;
+              left: 1.5rem;
+              color: rgba(204, 204, 204, 0);
+            }
+
+            .input-highlight {
+              position: absolute;
+              bottom: 0.2rem;
+              left: 0;
+              height: 2px;
+              width: 0;
+              background-color: $title;
+              transition: all 0.3s ease;
+            }
+
+            .input-field:focus + .input-label {
+              top: -1rem;
+              font-size: $afs;
+              color: #007bff;
+            }
+
+            .input-field:focus + .input-label + .input-highlight {
+              width: 100%;
+            }
+
+            .input-icon {
+              position: absolute;
+              top: 50%;
+              left: 0.5rem;
+              transform: translateY(-50%);
+            }
+
+            // displaying password
+            .password-display {
+              position: absolute;
+              top: 50%;
+              right: 1rem;
+              transform: translatey(-50%);
+              font-size: 1.3rem;
+              cursor: pointer;
+            }
+
+            .confirm-password-display {
+              position: absolute;
+              top: 50%;
+              right: 1rem;
+              transform: translatey(-50%);
+              font-size: 1.3rem;
+              cursor: pointer;
+            }
+          }
+        }
+
+        .cosent-and-others-container {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+
+          .consent-terms-button-login-container {
+            margin-bottom: 1rem;
+            .register-consent {
+              display: flex;
+              align-items: center;
+              gap: 0.5rem;
+              padding: 1rem;
+
+              .register-consent-input {
+                margin-right: 0;
+              }
+
+              .accept {
+                font-size: 1.3rem;
+              }
+
+              .link {
+                font-size: 1.3rem;
+                color: blue;
+              }
+            }
+
+            .register-button {
+              @include btn1;
+            }
+
+            .haveAccount {
+              font-size: 1.4rem;
+              margin-top: 1.5rem;
+
+              & a {
+                font-weight: bold;
+                color: blue;
+              }
+            }
+          }
+          .password-preconditions {
+            .password-checkbox {
+              background-color: transparent;
+              border: 1px solid $title;
+              padding: 1rem;
+              border-radius: 0.5rem;
+
+              .text {
+                line-height: 2rem;
+                font-size: 1rem;
+                .indicator {
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Labtop screen size */
+@media screen and (min-width: 1024px) {
+  .register-page {
+    width: 100%;
+    padding: 1rem;
+
+    .register-form-container {
+      width: $laptop;
+      margin: auto;
+      @include shadow;
+
+      .register-field {
+        border: none;
+      }
+
+      .register-legend {
+        text-align: center;
+        font-size: 2rem;
+        font-weight: 700;
+        padding-top: 1rem;
+      }
+
+      .register-form {
+        padding: 1rem;
+
+        .register-input-fields-container {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          column-gap: 1rem;
+          row-gap: 0.2rem;
+          padding: 1rem;
+          z-index: 1;
+
+          .input-container {
+            position: relative;
+
+            .input-field {
+              @include inputField;
+              background-color: white;
+            }
+
+            .input-label {
+              @include inputLabel;
+              position: absolute;
+              top: 0;
+              left: 1.5rem;
+              color: rgba(204, 204, 204, 0);
+            }
+
+            .input-highlight {
+              position: absolute;
+              bottom: 0.2rem;
+              left: 0;
+              height: 2px;
+              width: 0;
+              background-color: $title;
+              transition: all 0.3s ease;
+            }
+
+            .input-field:focus + .input-label {
+              top: -1rem;
+              font-size: $afs;
+              color: #007bff;
+            }
+
+            .input-field:focus + .input-label + .input-highlight {
+              width: 100%;
+            }
+
+            .input-icon {
+              position: absolute;
+              top: 50%;
+              left: 0.5rem;
+              transform: translateY(-50%);
+            }
+
+            // displaying password
+            .password-display {
+              position: absolute;
+              top: 50%;
+              right: 1rem;
+              transform: translatey(-50%);
+              font-size: 1.3rem;
+              cursor: pointer;
+            }
+
+            .confirm-password-display {
+              position: absolute;
+              top: 50%;
+              right: 1rem;
+              transform: translatey(-50%);
+              font-size: 1.3rem;
+              cursor: pointer;
+            }
+          }
+        }
+
+        .cosent-and-others-container {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+
+          .consent-terms-button-login-container {
+            margin-bottom: 1rem;
+            .register-consent {
+              display: flex;
+              align-items: center;
+              gap: 0.5rem;
+              padding: 1rem;
+
+              .register-consent-input {
+                margin-right: 0;
+              }
+
+              .accept {
+                font-size: 1.3rem;
+              }
+
+              .link {
+                font-size: 1.3rem;
+                color: blue;
+              }
+            }
+
+            .register-button {
+              @include btn1;
+            }
+
+            .haveAccount {
+              font-size: 1.4rem;
+              margin-top: 1.5rem;
+
+              & a {
+                font-weight: bold;
+                color: blue;
+              }
+            }
+          }
+          .password-preconditions {
+            .password-checkbox {
+              background-color: transparent;
+              border: 1px solid $title;
+              padding: 1rem;
+              border-radius: 0.5rem;
+
+              .text {
+                line-height: 2rem;
+                font-size: 1rem;
+                .indicator {
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

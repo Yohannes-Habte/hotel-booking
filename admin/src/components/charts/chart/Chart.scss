@@ -1,0 +1,15 @@
+@import '../../../styles/Variables.scss';
+@import '../../../styles/Mixins.scss';
+
+.chart {
+  flex: 4;
+  @include shadow;
+
+  .revenue {
+    text-align: center;
+  }
+
+  .chart-Grid {
+    stroke: none;
+  }
+}

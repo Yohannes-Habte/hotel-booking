@@ -1,0 +1,109 @@
+@import '../../../styles/Variables.scss';
+@import '../../../styles/Mixins.scss';
+
+.new-room-page {
+  display: flex;
+  width: 100%;
+
+  .new-room-container {
+    background-color: $main;
+    flex: 5;
+
+    .add-room-container {
+      padding: 1rem 0 0 1rem;
+
+      .title {
+        @include subTitle;
+        color: gray;
+        font-size: $afs;
+        padding: 0.5rem 1rem;
+      }
+    }
+
+    .new-room-form {
+      width: 95%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.5rem 2rem;
+      @include shadow;
+
+      .input-container {
+        position: relative;
+        width: 48%;
+        padding: 0.5rem 0;
+
+        .input-field {
+          @include inputField;
+        }
+
+        .input-label {
+          position: absolute;
+          top: 0;
+          left: 0;
+          font-size: 1rem;
+          color: rgba(204, 204, 204, 0);
+          pointer-events: none;
+          transition: all 0.3s ease;
+        }
+
+        .input-highlight {
+          position: absolute;
+          bottom: 0.5rem;
+          left: 0;
+          height: 2px;
+          width: 0;
+          background-color: #007bff;
+          transition: all 0.3s ease;
+        }
+
+        .input-field:focus + .input-label {
+          top: -0.3rem;
+          font-size: 12px;
+          color: #007bff;
+        }
+
+        .input-field:focus + .input-label + .input-highlight {
+          width: 100%;
+        }
+      }
+
+      .textarea-container {
+        width: 48%;
+        padding: 0.5rem 0;
+
+        .textarea-field {
+          width: 100%;
+          padding: 0.5rem 1rem;
+          border: 1px solid $title;
+          &::placeholder {
+            font-size: $afs;
+          }
+        }
+      }
+
+      .select-hotel {
+        width: 48%;
+        padding: 0.5rem 0;
+
+        .selct-option {
+          width: 100%;
+          padding: 10px;
+          font-size: 1rem;
+          border: 1px solid $title;
+          outline: none;
+          border-radius: $radius;
+        }
+      }
+
+      .btn-container {
+        width: 150px;
+
+        .btn {
+          @include btn1;
+        }
+      }
+    }
+  }
+}

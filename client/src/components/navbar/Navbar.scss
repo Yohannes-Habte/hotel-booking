@@ -1,0 +1,292 @@
+@import '../../styles/Variables.scss';
+@import '../../styles/Mixins.scss';
+
+// Mobile styling
+.navbar {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $navbar-bg;
+  padding: 0 2rem;
+
+  .title {
+    .title-link {
+      font-size: $afs;
+      color: #ffffff;
+    }
+  }
+
+  .navbar-container {
+    width: 100%;
+    max-width: $mobile;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: fixed;
+    top: 3.7rem;
+    right: -300px;
+    width: 300px;
+    background-color: #d6e6fa;
+    padding: 2rem;
+    transition: 0.5s;
+    z-index: 3;
+
+    // Navbar list items
+    .items {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      .item {
+        width: 250px;
+        border-bottom: 1px ridge;
+        padding: 0.3rem;
+
+        &:hover {
+          background-color: #bbd3ef;
+        }
+
+        .link {
+          &:hover {
+            color: $hover-text;
+          }
+        }
+      }
+    }
+    // Sign Up and Log In
+    .signup-login {
+      display: flex;
+      flex-direction: column;
+      margin-top: 1rem;
+      gap: 1rem;
+      .account-item {
+        width: 300px;
+        border-bottom: 1px ridge;
+        padding: 0.3rem;
+
+        &:hover {
+          background-color: #bbd3ef;
+        }
+
+        .link {
+          &:hover {
+            color: $hover-text;
+          }
+        }
+      }
+    }
+  }
+
+  // Active mode
+  .activeMode {
+    right: 0px;
+  }
+
+  // Hamburger menu
+  .hamburger-icon {
+    display: block;
+    font-size: 1.8rem;
+    cursor: pointer;
+
+    .fa-times {
+      font-size: 2rem;
+      color: white;
+    }
+
+    .fa-bars {
+      font-size: 2rem;
+      color: white;
+    }
+  }
+}
+
+// Tablet styling
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .navbar {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $navbar-bg;
+    padding: 0 2rem;
+
+    .title {
+      .title-link {
+        font-size: $afs;
+        color: #ffffff;
+      }
+    }
+
+    .navbar-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      position: fixed;
+      top: 3.7rem;
+      right: -300px;
+      width: 300px;
+      height: 100vh;
+      background-color: #d6e6fa;
+      padding: 2rem;
+      transition: 0.5s;
+      z-index: 3;
+
+      // Navbar list items
+      .items {
+        .item {
+          display: flex;
+          gap: 2rem;
+        }
+      }
+      // Sign Up and Log In
+      .signup-login {
+        .account-item {
+          .link {
+          }
+        }
+      }
+    }
+
+    // Active mode
+    .activeMode {
+      right: 0px;
+    }
+
+    // Hamburger menu
+    .hamburger-icon {
+      display: block;
+      font-size: 1.8rem;
+      cursor: pointer;
+
+      .fa-times {
+        font-size: 2rem;
+      }
+
+      .fa-bars {
+        font-size: 2rem;
+      }
+    }
+  }
+}
+
+// Laptop styling
+@media screen and (min-width: 1024px) {
+  .navbar {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $navbar-bg;
+    padding: 0 2rem;
+
+    .title {
+      @include title;
+      text-align: left;
+    }
+
+    .navbar-container {
+      width: 65%;
+      position: absolute;
+      top: 0;
+      left: 35%;
+      right: 10%;
+      display: flex;
+      flex-direction: row;
+      padding: 0;
+
+      .items {
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+       
+
+        .item {
+          width: 50px;
+          border-bottom: none;
+          padding: 0;
+
+          &:hover {
+            background-color: $navbar-bg;
+          }
+
+          .link {
+            color: $header-color;
+          }
+        }
+      }
+
+      // Log in and Sign up
+      .signup-login {
+        position: absolute;
+        top: -0.2rem;
+        right: 10%;
+        display: flex;
+        flex-direction: row;
+
+        .account-item {
+          background-color: #0202ff;
+          padding: $padding-button;
+          border-radius: $radius;
+          width: 70px;
+          border-bottom: none;
+          padding: 0.3rem;
+
+          &:hover {
+            background-color: $hover-button;
+          }
+
+          .link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: $header-color;
+
+            &:hover {
+              color: $hover-text;
+            }
+          }
+        }
+      }
+
+      // Logged in user Info
+      .user-info {
+        position: absolute;
+        top: 1rem;
+        right: 10%;
+        width: 10%;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    
+        .userName {
+          color: #ffffff;
+        }
+    
+        .user-icon {
+          color: #ffffff;
+          font-size: 1.6rem;
+          cursor: pointer;
+          &:hover {
+            color: #ffc0cb;
+          }
+        }
+      }
+
+    }
+
+    .hamburger-icon {
+      display: none;
+    }
+  }
+}
+
+

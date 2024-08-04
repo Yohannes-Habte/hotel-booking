@@ -1,0 +1,206 @@
+@import '../../styles/Variables.scss';
+@import '../../styles/Mixins.scss';
+
+// Mobile
+.traditional-hotels {
+  width: 100%;
+  max-width: $mobile;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  .hotel-container {
+    @include shadow2;
+
+    .image-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .image {
+        width: 100%;
+        object-fit: cover;
+        border-radius: $radius;
+      }
+    }
+
+    .hotel-details {
+      display: flex;
+      flex-direction: column;
+      padding: 0.3rem 1rem;
+
+      .name-price {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 0.3rem;
+
+        .title {
+          margin: 0;
+          font-size: $afs;
+        }
+
+        .price {
+        }
+      }
+
+      .city-rating {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 0.3rem;
+        margin-top: 0.3rem;
+
+        .evaluation {
+          display: flex;
+          flex-direction: row;
+          gap: 0.3rem;
+
+          .rating {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: $title;
+            padding: 0 0.5rem;
+            border-radius: $radius;
+            color: #ffffff;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Table
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .traditional-hotels {
+    width: 100%;
+    max-width: $tablet;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    .hotel-container {
+      @include shadow2;
+
+      .image-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .image {
+          display: 100%;
+          object-fit: cover;
+          border-radius: $radius;
+        }
+      }
+
+      .hotel-details {
+        display: flex;
+        flex-direction: column;
+        padding: 0.3rem 1rem;
+
+        .name-price {
+          display: flex;
+          justify-content: space-between;
+          padding: 0 0.3rem;
+
+          .title {
+            margin: 0;
+            font-size: $afs;
+          }
+
+          .price {
+          }
+        }
+
+        .city-rating {
+          display: flex;
+          justify-content: space-between;
+          padding: 0 0.3rem;
+          margin-top: 0.3rem;
+
+          .evaluation {
+            display: flex;
+            flex-direction: row;
+            gap: 0.3rem;
+
+            .rating {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              background-color: $title;
+              padding: 0 0.5rem;
+              border-radius: $radius;
+              color: #ffffff;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Labtop
+
+@media screen and (min-width: 1024px) {
+  .traditional-hotels {
+    width: 100%;
+    max-width: $laptop;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1rem;
+
+    .hotel-container {
+      @include shadow2;
+
+      .image-container {
+        .image {
+          height: 10rem;
+          width: 15rem;
+          object-fit: cover;
+          border-radius: $radius;
+        }
+      }
+
+      .hotel-details {
+        display: flex;
+        flex-direction: column;
+
+        .name-price {
+          display: flex;
+          justify-content: space-between;
+          padding: 0 0.3rem;
+
+          .title {
+            margin: 0;
+            font-size: $afs;
+          }
+
+          .price {
+          }
+        }
+
+        .city-rating {
+          display: flex;
+          justify-content: space-between;
+          padding: 0 0.3rem;
+          margin-top: 0.3rem;
+
+          .evaluation {
+            display: flex;
+            flex-direction: row;
+            gap: 0.3rem;
+
+            .rating {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              background-color: $title;
+              padding: 0 0.5rem;
+              border-radius: $radius;
+              color: #ffffff;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+// Fonts
+$font: 'Roboto Condensed', sans-serif;
+$font-family: 'Ubuntu Mono', monospace;
+
+// Font Color
+$header-color: #569572;
+$header-font-color: #778899;
+$title: #2e8b57;
+$logo: #0000cd;
+$hr: #b7a2a293;
+$navbar: #808080;
+$edit: rgba(60, 0, 255, 0.768);
+$sidebar: #ded0ed;
+
+// hover
+$button-hover: #7bd17bfc;
+$color: #ff2a04;
+
+// Fonts Size
+$sfs: 0.7rem;
+$afs: 1.2rem;
+$aafs: 1.8rem;
+$lfs: 2.2rem;
+
+// Font Weight
+$sfw: 200;
+$afw: 400;
+$aafw: 600;
+$lfw: 800;
+
+// Background
+$header: #f0f8ff;
+$title: #228b22;
+$nav-menu1: #e6e6fa;
+$nav-menu2: #b0c4de;
+$main: #f8f8ff;
+$section: #f8f8ff;
+$aside: #f0f8ff;
+$footer: #9fafdf;
+$buttonbg: #4682b4;
+$editbg: #ebebf8;
+$gray: #ada8a8;
+
+// padding
+$buttonPadding: 0.2rem;
+$boxPadding: 0.5rem 1rem;
+$textPadding: 0.2rem 0.5rem;
+
+// border radius
+$radius: 0.2rem;
+$radius-color: #c6a8ed;
+$border: #9b98f3;
+
+// Width View
+$desktop: 85%;
+$laptop: 90%;
+$tablet: 95%;
+$mobile: 98%;
+$max-width: 1024px;
+
+// Gray Mode Background
+$grayMode-bg: #ada8a8;
+$grayMode-navbar-bg: #8f8b8b;
+$grayMode-fontColor: #111;
+$grayMode-hover: #aaa1a1;
+
+// Dark Mode Background
+$darkMode-bg: #333333fa;
+$darkMode-navbar-bg: #222222f4;
+$darkMode-fontColor: #cec7c7ba;
+$darkMode-hover: #444;
