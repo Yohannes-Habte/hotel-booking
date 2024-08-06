@@ -1,5 +1,5 @@
-@import '../../styles/Variables.scss';
-@import '../../styles/Mixins.scss';
+@import "../../styles/Variables.scss";
+@import "../../styles/Mixins.scss";
 
 .register-page {
   width: 100%;
@@ -36,11 +36,12 @@
           }
 
           .input-label {
-            @include inputLabel;
             position: absolute;
             top: 0;
             left: 1.5rem;
-            color: rgba(204, 204, 204, 0);
+            color: #cccccc00;
+            @include inputLabel;
+           
           }
 
           .input-highlight {
@@ -153,7 +154,7 @@
 }
 
 // styling the checkbox
-.register-consent-input[type='checkbox'] {
+.register-consent-input[type="checkbox"] {
   width: 30px;
   height: 20px;
 }
@@ -200,11 +201,12 @@
             }
 
             .input-label {
-              @include inputLabel;
               position: absolute;
-              top: 0;
+              top: 0.01rem;
               left: 1.5rem;
-              color: rgba(204, 204, 204, 0);
+              color: #cccccc00;
+              @include inputLabel;
+              
             }
 
             .input-highlight {
@@ -358,11 +360,12 @@
             }
 
             .input-label {
-              @include inputLabel;
               position: absolute;
               top: 0;
               left: 1.5rem;
-              color: rgba(204, 204, 204, 0);
+              color: #cccccc;
+              @include inputLabel;
+            
             }
 
             .input-highlight {

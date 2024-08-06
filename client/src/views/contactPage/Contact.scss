@@ -38,10 +38,10 @@
               .input-file {
                 width: 100%;
                 position: relative;
-                @include input;
                 z-index: 2;
                 cursor: pointer;
                 opacity: 0;
+                @include input;
               }
 
               .file-btn {
@@ -238,10 +238,10 @@
                 .input-file {
                   width: 100%;
                   position: relative;
-                  @include input;
                   z-index: 2;
                   cursor: pointer;
                   opacity: 0;
+                  @include input;
                 }
   
                 .file-btn {
@@ -456,10 +456,9 @@
                 .input-file {
                   width: 100%;
                   position: relative;
-                  @include input;
-                  z-index: 2;
                   cursor: pointer;
                   opacity: 0;
+                  @include input;
                 }
 
                 .file-btn {
