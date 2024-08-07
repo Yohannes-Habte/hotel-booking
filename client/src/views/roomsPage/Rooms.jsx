@@ -4,11 +4,12 @@ import Fetch from '../../hooks/Fetch';
 import { UserContext } from '../../context/user/UserProvider';
 import { AiOutlineClose } from 'react-icons/ai';
 import { MdArrowBackIosNew, MdArrowForwardIos } from 'react-icons/md';
+import { API } from '../../utiles/shortAPI';
 
 const Rooms = () => {
   // Global variables
   const { data, loading, error } = Fetch(
-    `http://localhost:9900/api/pages/rooms`
+    `${API}/pages/rooms`
   );
 
   const { user } = useContext(UserContext);

@@ -1,5 +1,5 @@
-@import '../../styles/Variables.scss';
-@import '../../styles/Mixins.scss';
+@import "../../styles/Variables.scss";
+@import "../../styles/Mixins.scss";
 
 // Mobile styling
 .header {
@@ -18,15 +18,13 @@
 
     // Header search
     .header-search {
-      width: $mobile;
-      margin: auto;
       @include shadow3;
-      padding: 1rem 1rem 0 1rem;
       border-radius: $radius;
 
       .search-input {
         display: flex;
         gap: 0.5rem;
+        padding: 1rem 1rem 0.2rem 1rem;
 
         .icon {
           font-size: $afs;
@@ -45,6 +43,7 @@
       .select-dates {
         display: flex;
         gap: 0.5rem;
+        padding: 0.2rem 1rem;
 
         .icon {
           font-size: $afs;
@@ -60,6 +59,7 @@
       .select-items {
         display: flex;
         gap: 0.5rem;
+        padding: 0.2rem 1rem;
 
         .icon {
           font-size: $afs;
@@ -71,6 +71,7 @@
       }
 
       .btn-container {
+        padding: 0.2rem 1rem;
         .search-btn {
           @include button;
         }

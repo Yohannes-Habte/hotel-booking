@@ -1,13 +1,12 @@
-import React from 'react';
-import './HotelType.scss';
-import Fetch from '../../hooks/Fetch';
-import PreLoader from '../preLoader/PreLoader';
+import React from "react";
+import "./HotelType.scss";
+import Fetch from "../../hooks/Fetch";
+import PreLoader from "../preLoader/PreLoader";
+import { API } from "../../utiles/shortAPI";
 
 const HotelType = () => {
   // Global state variables
-  const { data, loading, error } = Fetch(
-    `http://localhost:9900/api/hotels/countByType/details`
-  );
+  const { data, loading, error } = Fetch(`${API}/hotels/countByType/details`);
   return (
     <div className="hotel-type">
       {loading ? (

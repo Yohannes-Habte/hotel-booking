@@ -1,18 +1,19 @@
-import React, { useState, useRef, useContext } from 'react';
-import { NavLink } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
-import { AiFillEyeInvisible } from 'react-icons/ai';
-import { HiOutlineEye } from 'react-icons/hi';
-import { FaUserAlt } from 'react-icons/fa';
-import './Login.scss';
-import axios from 'axios';
-import { toast } from 'react-toastify';
-import { MdEmail } from 'react-icons/md';
-import { RiLockPasswordFill } from 'react-icons/ri';
-import { UserContext } from '../../context/user/UserProvider';
-import { USER_ACTION } from '../../context/user/UserReducer';
-import CheckoutSteps from '../../components/checkoutSteps/CheckoutSteps';
-import ErrorMessage from '../../utiles/ErrorMessage';
+import { useState, useRef, useContext } from "react";
+import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { AiFillEyeInvisible } from "react-icons/ai";
+import { HiOutlineEye } from "react-icons/hi";
+import { FaUserAlt } from "react-icons/fa";
+import "./Login.scss";
+import axios from "axios";
+import { toast } from "react-toastify";
+import { MdEmail } from "react-icons/md";
+import { RiLockPasswordFill } from "react-icons/ri";
+import { UserContext } from "../../context/user/UserProvider";
+import { USER_ACTION } from "../../context/user/UserReducer";
+import CheckoutSteps from "../../components/checkoutSteps/CheckoutSteps";
+import ErrorMessage from "../../utiles/ErrorMessage";
+import { API } from "../../utiles/shortAPI";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -20,8 +21,8 @@ const Login = () => {
   const { user, loading, error, dispatch } = useContext(UserContext);
 
   // State variables
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
@@ -47,10 +48,10 @@ const Login = () => {
   const checkEmailFormat = () => {
     const emailRegex = /^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/.test(email);
     if (emailRegex) {
-      emailRef.current.className = 'errorInvisible';
+      emailRef.current.className = "errorInvisible";
       //emailRef.current.style.display = "none"
     } else {
-      emailRef.current.className = 'errorVisible';
+      emailRef.current.className = "errorVisible";
       //passwordRef.current.style.display = "block"
     }
   };
@@ -70,15 +71,15 @@ const Login = () => {
   // Function to update login user data
   const updateUserLoginData = (event) => {
     switch (event.target.name) {
-      case 'email':
+      case "email":
         setEmail(event.target.value);
         setEmailChange(true);
         break;
-      case 'password':
+      case "password":
         setPassword(event.target.value);
         setPasswordChange(true);
         break;
-      case 'showPassword':
+      case "showPassword":
         setShowPassword(false);
         break;
       default:
@@ -88,9 +89,9 @@ const Login = () => {
 
   // Reset all state variables for the login form
   const resetVariables = () => {
-    setEmail('');
+    setEmail("");
     setEmailChange(false);
-    setPassword('');
+    setPassword("");
     setPasswordChange(false);
   };
 
@@ -100,9 +101,9 @@ const Login = () => {
 
     dispatch({ type: USER_ACTION.LOGIN_START });
     if (!email) {
-      toast.error('Please enter your email!');
+      toast.error("Please enter your email!");
     } else if (!password) {
-      toast.error('Please enter password!');
+      toast.error("Please enter password!");
     } else {
       try {
         // The body
@@ -111,15 +112,12 @@ const Login = () => {
           password: password,
         };
 
-        const { data } = await axios.post(
-          `http://localhost:9900/api/users/login`,
-          loginUser
-        );
+        const { data } = await axios.post(`${API}/users/login`, loginUser);
         dispatch({ type: USER_ACTION.LOGIN_SUCCESS, payload: data.details });
-        localStorage.setItem('user', JSON.stringify(data));
+        localStorage.setItem("user", JSON.stringify(data));
 
         resetVariables();
-        navigate('/');
+        navigate("/");
       } catch (err) {
         console.log(err);
         dispatch({
@@ -132,7 +130,9 @@ const Login = () => {
 
   return (
     <main className="lagin-page">
-      <CheckoutSteps step1 className="step-one"> </CheckoutSteps>
+      <CheckoutSteps step1 className="step-one">
+        {" "}
+      </CheckoutSteps>
 
       <h1 className="login-title"> Welcome To Your Account </h1>
       <div className="login-container">
@@ -160,7 +160,7 @@ const Login = () => {
             <div className="input-container">
               <RiLockPasswordFill className="icon" />
               <input
-                type={showPassword ? 'text' : 'password'}
+                type={showPassword ? "text" : "password"}
                 name="password"
                 value={password}
                 onChange={updateUserLoginData}
@@ -186,7 +186,10 @@ const Login = () => {
                 <span>Keep me signed in</span>
               </div>
               <div className="forget-password">
-                <a href="" className='link'> Forget your password? </a>
+                <a href="" className="link">
+                  {" "}
+                  Forget your password?{" "}
+                </a>
               </div>
             </div>
             <button className="login-button"> Log In</button>

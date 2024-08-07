@@ -1,16 +1,14 @@
-
-import "./HotelByCity.scss"
-import Fetch from '../../hooks/Fetch';
-import PreLoader from '../preLoader/PreLoader';
+import "./HotelByCity.scss";
+import Fetch from "../../hooks/Fetch";
+import PreLoader from "../preLoader/PreLoader";
+import { API } from "../../utiles/shortAPI";
 
 const HotelByCity = () => {
   const { data, loading, error } = Fetch(
-    `http://localhost:9900/api/hotels/countByCity/number?cities=Massawa,Hamburg,Nairobi`
+    `${API}/hotels/countByCity/number?cities=Massawa,Hamburg,Nairobi`
   );
 
-  const { data: hotels } = Fetch(
-    `http://localhost:9900/api/pages/home/hotels`
-  );
+  const { data: hotels } = Fetch(`${API}/pages/home/hotels`);
   console.log("City hotels are:", hotels);
   return (
     <div className="city-hotels">

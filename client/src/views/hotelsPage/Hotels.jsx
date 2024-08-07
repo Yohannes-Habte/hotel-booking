@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
-import './Hotels.scss';
-import { useLocation, } from 'react-router-dom';
-import { format } from 'date-fns';
-import { DateRange } from 'react-date-range';
-import HotelsComponent from '../../components/hotel/HotelsComponent';
-import Fetch from '../../hooks/Fetch';
-import PreLoader from '../../components/preLoader/PreLoader';
-import CheckoutSteps from '../../components/checkoutSteps/CheckoutSteps';
-
+import React, { useState } from "react";
+import "./Hotels.scss";
+import { useLocation } from "react-router-dom";
+import { format } from "date-fns";
+import { DateRange } from "react-date-range";
+import HotelsComponent from "../../components/hotel/HotelsComponent";
+import Fetch from "../../hooks/Fetch";
+import PreLoader from "../../components/preLoader/PreLoader";
+import CheckoutSteps from "../../components/checkoutSteps/CheckoutSteps";
+import { API } from "../../utiles/shortAPI";
 
 const Hotels = () => {
   // useLocation will be used to transfer the state variables from header to this page (hotels page)
@@ -22,9 +22,7 @@ const Hotels = () => {
 
   // Fetching data from backend and sending datat to backend
   const { data, loading, error, reFetch } = Fetch(
-    `http://localhost:9900/api/hotels?city=${destination}&min=${min || 0}&max=${
-      max || 99999
-    }`
+    `${API}/hotels?city=${destination}&min=${min || 0}&max=${max || 99999}`
   );
 
   // Function that handle Search button
@@ -65,9 +63,9 @@ const Hotels = () => {
                 onClick={() => setOpenDate(!openDate)}
                 className="dates-range"
               >
-                {`${format(dates[0].startDate, 'dd/MM/yyyy')} to ${format(
+                {`${format(dates[0].startDate, "dd/MM/yyyy")} to ${format(
                   dates[0].endDate,
-                  'dd/MM/yyyy'
+                  "dd/MM/yyyy"
                 )}`}
 
                 {/* Date Range will be used to select new dates other than home page selected dates */}

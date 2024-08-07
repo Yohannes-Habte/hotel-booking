@@ -1,9 +1,9 @@
-import React, { useContext, useState } from 'react';
-import { NavLink } from 'react-router-dom';
-import './Navbar.scss';
-import { UserContext } from '../../context/user/UserProvider';
-import { FaUserCircle } from 'react-icons/fa';
-import { USER_ACTION } from '../../context/user/UserReducer';
+import { useContext, useState } from "react";
+import { Link, NavLink } from "react-router-dom";
+import "./Navbar.scss";
+import { UserContext } from "../../context/user/UserProvider";
+import { FaUserCircle } from "react-icons/fa";
+import { USER_ACTION } from "../../context/user/UserReducer";
 
 const Navbar = () => {
   // Global state variable
@@ -21,29 +21,29 @@ const Navbar = () => {
   // Logout function
   const logout = () => {
     dispatch({ type: USER_ACTION.LOGOUT });
-    localStorage.removeItem('user');
+    localStorage.removeItem("user");
   };
 
   return (
     <nav className="navbar">
       <h2 className="title">
-        <NavLink to={'/'} className={'title-link'}>
+        <NavLink to={"/"} className={"title-link"}>
           LisaHotel
         </NavLink>
       </h2>
       <section
-        className={clicked ? 'navbar-container activeMode' : 'navbar-container'}
+        className={clicked ? "navbar-container activeMode" : "navbar-container"}
       >
         {/* Navigation to home page, about page and Hotels page */}
         <ul className="items">
           <li onClick={openItem} className="item">
             <NavLink
-              to={'/'}
+              to={"/"}
               style={({ isActive }) => ({
-                textDecoration: isActive && 'underline',
-                color: isActive && 'red',
+                textDecoration: isActive && "underline",
+                color: isActive && "red",
               })}
-              className={'link'}
+              className={"link"}
             >
               Home
             </NavLink>
@@ -51,12 +51,12 @@ const Navbar = () => {
 
           <li onClick={openItem} className="item">
             <NavLink
-              to={'/about'}
+              to={"/about"}
               style={({ isActive }) => ({
-                textDecoration: isActive && 'underline',
-                color: isActive && 'red',
+                textDecoration: isActive && "underline",
+                color: isActive && "red",
               })}
-              className={'link'}
+              className={"link"}
             >
               About
             </NavLink>
@@ -64,12 +64,12 @@ const Navbar = () => {
 
           <li onClick={openItem} className="item">
             <NavLink
-              to={'/rooms'}
+              to={"/rooms"}
               style={({ isActive }) => ({
-                textDecoration: isActive && 'underline',
-                color: isActive && 'red',
+                textDecoration: isActive && "underline",
+                color: isActive && "red",
               })}
-              className={'link'}
+              className={"link"}
             >
               Rooms
             </NavLink>
@@ -77,12 +77,12 @@ const Navbar = () => {
 
           <li onClick={openItem} className="item">
             <NavLink
-              to={'/contact'}
+              to={"/contact"}
               style={({ isActive }) => ({
-                textDecoration: isActive && 'underline',
-                color: isActive && 'red',
+                textDecoration: isActive && "underline",
+                color: isActive && "red",
               })}
-              className={'link'}
+              className={"link"}
             >
               Contact
             </NavLink>
@@ -98,21 +98,21 @@ const Navbar = () => {
         ) : (
           <ul className="signup-login">
             <li onClick={openItem} className="account-item">
-              <NavLink to={'/register'} className={'link'}>
+              <Link to={"/register"} className={"account-link"}>
                 Sign Up
-              </NavLink>
+              </Link>
             </li>
             <li onClick={openItem} className="account-item">
-              <NavLink to={'/login'} className={'link'}>
+              <Link to={"/login"} className={"account-link"}>
                 Login
-              </NavLink>
+              </Link>
             </li>
           </ul>
         )}
       </section>
 
       <div onClick={handleClick} className="hamburger-icon">
-        <i className={clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
+        <i className={clicked ? "fas fa-times" : "fas fa-bars"}></i>
       </div>
     </nav>
   );

@@ -1,17 +1,18 @@
-import React, { useContext, useState } from 'react';
+import { useContext, useState } from "react";
 import {
   MdArrowBackIosNew,
   MdArrowForwardIos,
   MdLocationPin,
-} from 'react-icons/md';
-import { AiOutlineClose } from 'react-icons/ai';
-import Fetch from '../../hooks/Fetch';
-import { useLocation, useNavigate, useParams } from 'react-router-dom';
-import { SearchContext } from '../../context/search/SearchProvider';
-import { UserContext } from '../../context/user/UserProvider';
-import Booking from '../../components/modal/Booking';
-import './Hotel.scss';
-import CheckoutSteps from '../../components/checkoutSteps/CheckoutSteps';
+} from "react-icons/md";
+import { AiOutlineClose } from "react-icons/ai";
+import Fetch from "../../hooks/Fetch";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
+import { SearchContext } from "../../context/search/SearchProvider";
+import { UserContext } from "../../context/user/UserProvider";
+import Booking from "../../components/modal/Booking";
+import "./Hotel.scss";
+import CheckoutSteps from "../../components/checkoutSteps/CheckoutSteps";
+import { API } from "../../utiles/shortAPI";
 
 const Hotel = () => {
   // Use naviage
@@ -27,7 +28,7 @@ const Hotel = () => {
 
   // Get hotel Id using useLocation or useParams
   const location = useLocation();
-  const hotelID = location.pathname.split('/')[2];
+  const hotelID = location.pathname.split("/")[2];
   const params = useParams();
   const hoteId = params.hotelId;
 
@@ -41,7 +42,7 @@ const Hotel = () => {
   const sliderMove = (direction) => {
     let newSlideNumber;
 
-    if (direction === 'left') {
+    if (direction === "left") {
       newSlideNumber = slideIndex === 0 ? 5 : slideIndex - 1;
     } else {
       newSlideNumber = slideIndex === 5 ? 0 : slideIndex + 1;
@@ -51,9 +52,7 @@ const Hotel = () => {
   };
 
   // Global state variables
-  const { data, loading, error } = Fetch(
-    `http://localhost:9900/api/hotels/${hoteId}`
-  );
+  const { data, loading, error } = Fetch(`${API}/hotels/${hoteId}`);
 
   // Total millisenconds per day
   const totalMillisecondsPerDay = 1000 * 60 * 60 * 24;
@@ -75,8 +74,8 @@ const Hotel = () => {
     if (user) {
       setOpenModal(true);
     } else {
-      alert('Please login!');
-      navigate('/login');
+      alert("Please login!");
+      navigate("/login");
     }
   };
 
@@ -84,7 +83,7 @@ const Hotel = () => {
     <main className="single-hotel">
       <CheckoutSteps step1 step2 step3></CheckoutSteps>
       {loading ? (
-        'Loading...'
+        "Loading..."
       ) : error ? (
         <div> {error} </div>
       ) : (
@@ -98,7 +97,7 @@ const Hotel = () => {
               />
               <MdArrowBackIosNew
                 className="left-arrow"
-                onClick={() => sliderMove('left')}
+                onClick={() => sliderMove("left")}
               />
               <span className="previous">Previous</span>
               <figure className="slider-wrapper">
@@ -110,7 +109,7 @@ const Hotel = () => {
               </figure>
               <MdArrowForwardIos
                 className="right-arrow"
-                onClick={() => sliderMove('right')}
+                onClick={() => sliderMove("right")}
               />
               <span className="next">Next</span>
             </div>

@@ -1,4 +1,3 @@
-import React from 'react';
 import './Stripe.scss';
 
 const StripeCancel = () => {

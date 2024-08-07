@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
-import Fetch from '../../hooks/Fetch';
+import { useState } from "react";
+import Fetch from "../../hooks/Fetch";
 import {
   IoIosArrowDropupCircle,
   IoIosArrowDropdownCircle,
-} from 'react-icons/io';
-import './About.scss';
+} from "react-icons/io";
+import "./About.scss";
+import { API } from "../../utiles/shortAPI";
 
 const About = () => {
   // Local state variable
@@ -16,9 +17,7 @@ const About = () => {
   const [open6, setOpten6] = useState(false);
 
   // Global useEffect function
-  const { data, loading, error } = Fetch(
-    `http://localhost:9900/api/pages/about`
-  );
+  const { data } = Fetch(`${API}/pages/about`);
   return (
     <main className="about-page">
       <section className="about-container">
@@ -31,7 +30,7 @@ const About = () => {
           <article className="step">
             <h3
               onClick={() => setOpten1(!open1)}
-              className={open1 ? 'step-title' : 'default'}
+              className={open1 ? "step-title" : "default"}
             >
               {data.step1}
             </h3>
@@ -54,7 +53,7 @@ const About = () => {
           <article className="step">
             <h3
               onClick={() => setOpten2(!open2)}
-              className={open2 ? 'step-title' : 'default'}
+              className={open2 ? "step-title" : "default"}
             >
               {data.step2}
             </h3>
@@ -78,7 +77,7 @@ const About = () => {
           <article className="step">
             <h3
               onClick={() => setOpten3(!open3)}
-              className={open3 ? 'step-title' : 'default'}
+              className={open3 ? "step-title" : "default"}
             >
               {data.step3}
             </h3>
@@ -101,7 +100,7 @@ const About = () => {
           <article className="step">
             <h3
               onClick={() => setOpten4(!open4)}
-              className={open4 ? 'step-title' : 'default'}
+              className={open4 ? "step-title" : "default"}
             >
               {data.step4}
             </h3>
@@ -124,7 +123,7 @@ const About = () => {
           <article className="step">
             <h3
               onClick={() => setOpten5(!open5)}
-              className={open5 ? 'step-title' : 'default'}
+              className={open5 ? "step-title" : "default"}
             >
               {data.step5}
             </h3>
@@ -147,7 +146,7 @@ const About = () => {
           <article className="step">
             <h3
               onClick={() => setOpten6(!open6)}
-              className={open6 ? 'step-title' : 'default'}
+              className={open6 ? "step-title" : "default"}
             >
               {data.step6}
             </h3>

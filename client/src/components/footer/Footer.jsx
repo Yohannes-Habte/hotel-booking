@@ -1,37 +1,34 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-import './Footer.scss';
+import { NavLink } from "react-router-dom";
+import "./Footer.scss";
 import {
-  FaGithubSquare,
   FaLinkedin,
   FaYoutube,
   FaFacebookSquare,
   FaTwitterSquare,
-} from 'react-icons/fa';
+} from "react-icons/fa";
 import {
   MdOutlineMail,
   MdPhoneInTalk,
   MdOutlineMessage,
   MdLocationOn,
-} from 'react-icons/md';
-import Fetch from '../../hooks/Fetch';
+} from "react-icons/md";
+import Fetch from "../../hooks/Fetch";
+import { API } from "../../utiles/shortAPI";
 
 const Footer = () => {
   // Display service procedures in the frontend fetched from backend
-  const { loading, error, data } = Fetch(
-    `http://localhost:9900/api/pages/footer`
-  );
+  const { loading, error, data } = Fetch(`${API}/pages/footer`);
 
   return (
     <footer className="footer">
       {loading ? (
         "Loading..."
       ) : error ? (
-        <div variant="danger"> {error} </div>
+        <div> {error} </div>
       ) : (
         <div className="footer-sections-container">
           <section className="footer-sitemap">
-            <h2> {data.sitemap} </h2>
+            <h2 className="title"> {data.sitemap} </h2>
             <ul>
               <li>
                 <NavLink to="/"> {data.home} </NavLink>
@@ -42,25 +39,23 @@ const Footer = () => {
               <li>
                 <NavLink to="/rooms"> {data.rooms} </NavLink>
               </li>
-             
+
               <li>
                 <NavLink to="/contact"> {data.contact} </NavLink>
               </li>
-              
             </ul>
           </section>
 
           <section className="footer-company">
-            <h2> {data.company} </h2>
+            <h2 className="title"> {data.company} </h2>
             <ul>
-            
               <li>
                 <NavLink to="/story"> {data.story} </NavLink>
               </li>
               <li>
                 <NavLink to="/team"> {data.employees} </NavLink>
               </li>
-             
+
               <li>
                 <NavLink to="/awards"> {data.award} </NavLink>
               </li>
@@ -71,7 +66,7 @@ const Footer = () => {
           </section>
 
           <section className="footer-social">
-            <h2> {data.social} </h2>
+            <h2 className="title"> {data.social} </h2>
             <ul>
               <li>
                 <a
@@ -95,7 +90,6 @@ const Footer = () => {
                 </a>
               </li>
 
-              
               <li>
                 <a href="https://twitter.com/" target="_blank">
                   <FaTwitterSquare className="footer-icon" /> {data.twitter}
@@ -105,7 +99,7 @@ const Footer = () => {
           </section>
 
           <section className="footer-contact">
-            <h2> Contact </h2>
+            <h2 className="title"> Contact </h2>
             <ul>
               <li>
                 <a href="mailto:uelandrae@gmail.com">

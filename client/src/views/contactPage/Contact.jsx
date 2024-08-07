@@ -1,24 +1,25 @@
-import React, { useEffect, useRef, useState } from 'react';
-import Header from '../../components/header/Header';
-import { FiPhoneCall } from 'react-icons/fi';
-import { MdClose, MdEmail, MdLocationOn } from 'react-icons/md';
-import { FaTwitterSquare } from 'react-icons/fa';
-import { BiCloudUpload } from 'react-icons/bi';
-import './Contact.scss';
-import axios from 'axios';
-import { useLocation } from 'react-router-dom';
-import { toast } from 'react-toastify';
+import { useEffect, useRef, useState } from "react";
+import Header from "../../components/header/Header";
+import { FiPhoneCall } from "react-icons/fi";
+import { MdClose, MdEmail, MdLocationOn } from "react-icons/md";
+import { FaTwitterSquare } from "react-icons/fa";
+import { BiCloudUpload } from "react-icons/bi";
+import "./Contact.scss";
+import axios from "axios";
+import { useLocation } from "react-router-dom";
+import { toast } from "react-toastify";
+import { API, cloud_URL, upload_preset } from "../../utiles/shortAPI";
 
 const Contact = () => {
   // Comment Id
   const params = useLocation();
-  console.log('Comment Id will be', params);
+  console.log("Comment Id will be", params);
   // State variables
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
-  const [email, setEmail] = useState('');
-  const [file, setFile] = useState('');
-  const [message, setMessage] = useState('');
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [file, setFile] = useState("");
+  const [message, setMessage] = useState("");
   const [comments, setComments] = useState([]);
   // Validation of the state variables
   const [firstNameValidation, setFirstNameValidation] = useState(false);
@@ -34,37 +35,37 @@ const Contact = () => {
   const checkEmailFormat = () => {
     const emailRegex = /^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/.test(email);
     if (emailRegex) {
-      emailRef.current.className = 'errorInvisible';
+      emailRef.current.className = "errorInvisible";
     } else {
-      emailRef.current.className = 'errorVisible';
+      emailRef.current.className = "errorVisible";
     }
   };
 
   //Function that validate message length
   const messageLength = () => {
     if (message.length >= 50) {
-      textMessage.current.className = 'errorInvisible';
+      textMessage.current.className = "errorInvisible";
     } else {
-      textMessage.current.className = 'errorVisible';
+      textMessage.current.className = "errorVisible";
     }
   };
 
   // Function that handle input change
   const handleChange = (event) => {
     switch (event.target.name) {
-      case 'firstName':
+      case "firstName":
         setFirstName(event.target.value);
         setFirstNameValidation(true);
         break;
-      case 'lastName':
+      case "lastName":
         setLastName(event.target.value);
         setLastNameValidation(true);
         break;
-      case 'email':
+      case "email":
         setEmail(event.target.value);
         setEmailValidation(true);
         break;
-      case 'message':
+      case "message":
         setMessage(event.target.value);
         setMessageValidation(true);
         break;
@@ -77,7 +78,7 @@ const Contact = () => {
   useEffect(() => {
     const fetchComments = async () => {
       try {
-        const { data } = await axios.get(`http://localhost:9900/api/comments`);
+        const { data } = await axios.get(`${API}/comments`);
         setComments(data);
       } catch (error) {
         console.log(error);
@@ -88,11 +89,11 @@ const Contact = () => {
 
   // Function to reset input data
   const reset = () => {
-    setFirstName('');
-    setLastName('');
-    setEmail('');
-    setFile('');
-    setMessage('');
+    setFirstName("");
+    setLastName("");
+    setEmail("");
+    setFile("");
+    setMessage("");
     setFirstNameValidation(false);
     setLastNameValidation(false);
     setEmailValidation(false);
@@ -103,19 +104,16 @@ const Contact = () => {
   const submitTestimonial = async (event) => {
     event.preventDefault();
 
-    if ((!firstName || !lastName || !email || !file || !message)) {
-      toast.error('Please fill in the required fields');
+    if (!firstName || !lastName || !email || !file || !message) {
+      toast.error("Please fill in the required fields");
     } else {
       // Upload the image from the form data
       const data = new FormData();
-      data.append('file', file);
-      data.append('upload_preset', 'lisaConsultFiles');
+      data.append("file", file);
+      data.append("upload_preset", upload_preset);
 
       try {
-        const response = await axios.post(
-          'https://api.cloudinary.com/v1_1/lisaconsult/image/upload',
-          data
-        );
+        const response = await axios.post(`${cloud_URL}`, data);
         const { url } = response.data;
 
         // new comment
@@ -127,10 +125,7 @@ const Contact = () => {
           message: message,
         };
 
-        await axios.post(
-          `http://localhost:9900/api/comments/createComment`,
-          newComment
-        );
+        await axios.post(`${API}/comments/createComment`, newComment);
 
         reset();
       } catch (error) {
@@ -143,7 +138,7 @@ const Contact = () => {
   // Delete a product from database
   const deleteComment = async (id) => {
     try {
-      await axios.delete(`http://localhost:9900/api/comments/${id}`);
+      await axios.delete(`${API}/comments/${id}`);
       setComments(comments.filter((comment) => comment._id !== id));
     } catch (error) {
       console.log(error);
@@ -178,8 +173,8 @@ const Contact = () => {
                   <div
                     className={
                       firstNameValidation && firstName.trim().length === 0
-                        ? 'errorVisible'
-                        : 'errorInvisible'
+                        ? "errorVisible"
+                        : "errorInvisible"
                     }
                   >
                     First name is required!
@@ -199,8 +194,8 @@ const Contact = () => {
                   <div
                     className={
                       lastNameValidation && lastName.trim().length === 0
-                        ? 'errorVisible'
-                        : 'errorInvisible'
+                        ? "errorVisible"
+                        : "errorInvisible"
                     }
                   >
                     Last name is required!
@@ -220,8 +215,8 @@ const Contact = () => {
                   <div
                     className={
                       emailValidation && email.trim().length === 0
-                        ? 'errorVisible'
-                        : 'errorInvisible'
+                        ? "errorVisible"
+                        : "errorInvisible"
                     }
                   >
                     Email is required!
@@ -257,8 +252,8 @@ const Contact = () => {
                 <div
                   className={
                     messageValidation && message.trim().length === 0
-                      ? 'errorVisible'
-                      : 'errorInvisible'
+                      ? "errorVisible"
+                      : "errorInvisible"
                   }
                 >
                   Message is required!
@@ -266,12 +261,12 @@ const Contact = () => {
 
                 <div>
                   {message.length === 0 ? (
-                    ''
+                    ""
                   ) : (
                     <div className="errorVisible">
                       {50 - message.trim().length > 0
                         ? `${50 - message.trim().length} characters needed`
-                        : ''}
+                        : ""}
                     </div>
                   )}
                 </div>
@@ -286,8 +281,8 @@ const Contact = () => {
               <FiPhoneCall className="contact-icon" />
               <p className="link-container">
                 <a className="link" href="tel:+4917581005650">
-                  {' '}
-                  Call us{' '}
+                  {" "}
+                  Call us{" "}
                 </a>
               </p>
             </div>
@@ -295,8 +290,8 @@ const Contact = () => {
               <MdEmail className="contact-icon" />
               <p className="link-container">
                 <a className="link" href="mailto:uelandrae@gmail.com">
-                  {' '}
-                  Email Us{' '}
+                  {" "}
+                  Email Us{" "}
                 </a>
               </p>
             </div>
@@ -304,8 +299,8 @@ const Contact = () => {
               <FaTwitterSquare className="contact-icon" />
               <p className="link-container">
                 <a className="link" href="twitter">
-                  {' '}
-                  Tweet us{' '}
+                  {" "}
+                  Tweet us{" "}
                 </a>
               </p>
             </div>
@@ -313,7 +308,7 @@ const Contact = () => {
               <MdLocationOn className="contact-icon" />
               <p className="link-container">
                 <a className="link" href="#">
-                  {' '}
+                  {" "}
                   Straße 31, 4657 Hamburg, Germany
                 </a>
               </p>
@@ -323,7 +318,7 @@ const Contact = () => {
                 src={
                   file
                     ? URL.createObjectURL(file)
-                    : 'https://icon-library.com/images/no-image-icon//no-image-icon-0.jpg'
+                    : "https://icon-library.com/images/no-image-icon//no-image-icon-0.jpg"
                 }
                 alt=""
                 className="image"

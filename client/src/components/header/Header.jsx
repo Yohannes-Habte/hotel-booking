@@ -1,18 +1,19 @@
-import React, { useContext, useState } from 'react';
-import { MdLocationPin } from 'react-icons/md';
-import { LuCalendarDays } from 'react-icons/lu';
-import { BsPersonPlusFill } from 'react-icons/bs';
-import { useNavigate } from 'react-router-dom';
-import './Header.scss';
-import { SearchContext } from '../../context/search/SearchProvider';
+import { useContext, useState } from "react";
+import { MdLocationPin } from "react-icons/md";
+import { LuCalendarDays } from "react-icons/lu";
+import { BsPersonPlusFill } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
+import "./Header.scss";
+import { SearchContext } from "../../context/search/SearchProvider";
 
 // Date Range
-import 'react-date-range/dist/styles.css'; // main css file
-import 'react-date-range/dist/theme/default.css'; // theme css file
-import { DateRange } from 'react-date-range';
-import { format } from 'date-fns';
-import { SEARCH_ACTION } from '../../context/search/SearchReducer';
-import Fetch from '../../hooks/Fetch';
+import "react-date-range/dist/styles.css"; // main css file
+import "react-date-range/dist/theme/default.css"; // theme css file
+import { DateRange } from "react-date-range";
+import { format } from "date-fns";
+import { SEARCH_ACTION } from "../../context/search/SearchReducer";
+import Fetch from "../../hooks/Fetch";
+import { API } from "../../utiles/shortAPI";
 
 const Header = ({ pages, page }) => {
   const navigate = useNavigate();
@@ -21,7 +22,7 @@ const Header = ({ pages, page }) => {
   // Local state variables
   const [openDate, setOpenDate] = useState(false);
   const [openOptions, setOpenOptions] = useState(false);
-  const [destination, setDestination] = useState('');
+  const [destination, setDestination] = useState("");
   const [options, setOptions] = useState({
     adult: 1,
     children: 0,
@@ -33,7 +34,7 @@ const Header = ({ pages, page }) => {
     {
       startDate: new Date(),
       endDate: new Date(),
-      key: 'selection',
+      key: "selection",
     },
   ]);
 
@@ -43,15 +44,13 @@ const Header = ({ pages, page }) => {
       return {
         ...prev,
         [option]:
-          quantity === 'increase' ? options[option] + 1 : options[option] - 1,
+          quantity === "increase" ? options[option] + 1 : options[option] - 1,
       };
     });
   };
 
   // Header image
-  const { data, loading, error } = Fetch(
-    `http://localhost:9900/api/pages/header`
-  );
+  const { data, loading, error } = Fetch(`${API}/pages/header`);
 
   // Handle search to navigate to the hotels page. Besides, it will transfer the state variables to the hotels page
   const handleSearch = () => {
@@ -59,21 +58,21 @@ const Header = ({ pages, page }) => {
       type: SEARCH_ACTION.NEW_SEARCH,
       payload: { destination, dates, options },
     });
-    navigate('/hotels', { state: { destination, dates, options } });
+    navigate("/hotels", { state: { destination, dates, options } });
   };
 
   return (
     <header className="header">
       <section
         className={
-          pages === 'HotelsHotelAndContact'
-            ? 'header-container pages'
-            : 'header-container'
+          pages === "HotelsHotelAndContact"
+            ? "header-container pages"
+            : "header-container"
         }
       >
         {/* Header image */}
         {loading ? (
-          'Loading'
+          "Loading"
         ) : error ? (
           <div> {error} </div>
         ) : (
@@ -83,12 +82,12 @@ const Header = ({ pages, page }) => {
         )}
 
         {/* Header title */}
-        {page !== 'Conctact' && (
+        {page !== "Conctact" && (
           <h1 className="header-title"> {data.title} </h1>
         )}
 
         {/* Header search */}
-        {pages !== 'HotelsHotelAndContact' && (
+        {pages !== "HotelsHotelAndContact" && (
           <div className="header-search">
             <div className="search-input">
               <MdLocationPin className="icon" />
@@ -109,9 +108,9 @@ const Header = ({ pages, page }) => {
                 onClick={() => setOpenDate(!openDate)}
                 className="date-range"
               >
-                {`${format(dates[0].startDate, 'dd/MM/yyyy')} to ${format(
+                {`${format(dates[0].startDate, "dd/MM/yyyy")} to ${format(
                   dates[0].endDate,
-                  'dd/MM/yyyy'
+                  "dd/MM/yyyy"
                 )}`}
               </span>
 
@@ -145,14 +144,14 @@ const Header = ({ pages, page }) => {
                     <div className="button-quantiy">
                       <button
                         disabled={options.adult <= 1}
-                        onClick={() => handleOption('adult', 'decrease')}
+                        onClick={() => handleOption("adult", "decrease")}
                         className="btn-dec"
                       >
                         -
                       </button>
                       <span className="quantity"> {options.adult} </span>
                       <button
-                        onClick={() => handleOption('adult', 'increase')}
+                        onClick={() => handleOption("adult", "increase")}
                         className="btn-inc"
                       >
                         +
@@ -165,14 +164,14 @@ const Header = ({ pages, page }) => {
                     <div className="button-quantiy">
                       <button
                         disabled={options.children <= 0}
-                        onClick={() => handleOption('children', 'decrease')}
+                        onClick={() => handleOption("children", "decrease")}
                         className="btn-dec"
                       >
                         -
                       </button>
                       <span className="quantity"> {options.children} </span>
                       <button
-                        onClick={() => handleOption('children', 'increase')}
+                        onClick={() => handleOption("children", "increase")}
                         className="btn-inc"
                       >
                         +
@@ -185,14 +184,14 @@ const Header = ({ pages, page }) => {
                     <div className="button-quantiy">
                       <button
                         disabled={options.room <= 1}
-                        onClick={() => handleOption('room', 'decrease')}
+                        onClick={() => handleOption("room", "decrease")}
                         className="btn-dec"
                       >
                         -
                       </button>
                       <span className="quantity"> {options.room} </span>
                       <button
-                        onClick={() => handleOption('room', 'increase')}
+                        onClick={() => handleOption("room", "increase")}
                         className="btn-inc"
                       >
                         +

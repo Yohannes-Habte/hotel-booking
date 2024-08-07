@@ -1,15 +1,16 @@
-import React, { useState, useRef, useEffect, useContext } from 'react';
-import { NavLink } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
-import { AiFillEyeInvisible, AiFillEye } from 'react-icons/ai';
-import { FaMapMarker, FaPhoneAlt, FaTimes, FaUserAlt } from 'react-icons/fa';
-import { BsCheck2All } from 'react-icons/bs';
-import { MdEmail, MdLocationPin } from 'react-icons/md';
-import { RiLockPasswordFill } from 'react-icons/ri';
-import './Register.scss';
-import axios from 'axios';
-import { toast } from 'react-toastify';
-import { UserContext } from '../../context/user/UserProvider';
+import { useState, useRef, useEffect, useContext } from "react";
+import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
+import { FaMapMarker, FaPhoneAlt, FaTimes, FaUserAlt } from "react-icons/fa";
+import { BsCheck2All } from "react-icons/bs";
+import { MdEmail, MdLocationPin } from "react-icons/md";
+import { RiLockPasswordFill } from "react-icons/ri";
+import "./Register.scss";
+import axios from "axios";
+import { toast } from "react-toastify";
+import { UserContext } from "../../context/user/UserProvider";
+import { API } from "../../utiles/shortAPI";
 
 const Register = () => {
   // to navigate register page
@@ -19,14 +20,14 @@ const Register = () => {
   const { user, loading, error, dispatch } = useContext(UserContext);
 
   // Local state variables
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
-  const [phone, setPhone] = useState('');
-  const [city, setCity] = useState('');
-  const [country, setCountry] = useState('');
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [phone, setPhone] = useState("");
+  const [city, setCity] = useState("");
+  const [country, setCountry] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
@@ -92,35 +93,35 @@ const Register = () => {
   // Function that is used to update the state variables of the registration form
   const update = (event) => {
     switch (event.target.name) {
-      case 'firstName':
+      case "firstName":
         setFirstName(event.target.value);
         break;
-      case 'lastName':
+      case "lastName":
         setLastName(event.target.value);
         break;
-      case 'email':
+      case "email":
         setEmail(event.target.value);
         break;
-      case 'password':
+      case "password":
         setPassword(event.target.value);
         break;
 
-      case 'phone':
+      case "phone":
         setPhone(event.target.value);
         break;
-      case 'city':
+      case "city":
         setCity(event.target.value);
         break;
-      case 'country':
+      case "country":
         setCountry(event.target.value);
         break;
-      case 'showPassword':
+      case "showPassword":
         setShowPassword(false);
         break;
-      case 'confirmPassword':
+      case "confirmPassword":
         setConfirmPassword(event.target.value);
         break;
-      case 'showConfirmPassword':
+      case "showConfirmPassword":
         setShowConfirmPassword(false);
         break;
       default:
@@ -138,24 +139,24 @@ const Register = () => {
         password
       );
     if (passwordRegex) {
-      passwordRef.current.className = 'errorInvisible';
+      passwordRef.current.className = "errorInvisible";
       //passwordRef.current.style.display = "none"
     } else {
-      passwordRef.current.className = 'errorVisible';
+      passwordRef.current.className = "errorVisible";
       //passwordRef.current.style.display = "block"
     }
   };
 
   // Function to reset all the state variables
   const resetAllEnteredData = () => {
-    setFirstName('');
-    setLastName('');
-    setEmail('');
-    setPassword('');
-    setConfirmPassword('');
-    setPhone('');
-    setCity('');
-    setCountry('');
+    setFirstName("");
+    setLastName("");
+    setEmail("");
+    setPassword("");
+    setConfirmPassword("");
+    setPhone("");
+    setCity("");
+    setCountry("");
   };
 
   // Function to register the user
@@ -171,9 +172,9 @@ const Register = () => {
       !city ||
       !country
     ) {
-      toast.error('Fill in the required fields');
+      toast.error("Fill in the required fields");
     } else if (password !== confirmPassword) {
-      toast.error('Passwords did not match');
+      toast.error("Passwords did not match");
     } else {
       const userData = {
         firstName: firstName,
@@ -187,15 +188,12 @@ const Register = () => {
       };
 
       try {
-        const { data } = await axios.post(
-          process.env.REACT_APP_SERVER_URL + '/api/users/register',
-          userData
-        );
+        const { data } = await axios.post(`${API}/users/register`, userData);
 
         // dispatch({ type: USER_CART_ACTION.USER_SIGNIN, payload: data });
         // localStorage.setItem('user', JSON.stringify(data));
         resetAllEnteredData();
-        navigate('/login');
+        navigate("/login");
       } catch (err) {
         alert(err.message);
       }
@@ -266,7 +264,7 @@ const Register = () => {
               <div className="input-container">
                 <RiLockPasswordFill className="input-icon" />
                 <input
-                  type={showPassword ? 'text' : 'password'}
+                  type={showPassword ? "text" : "password"}
                   name="password"
                   value={password}
                   onChange={update}
@@ -289,7 +287,7 @@ const Register = () => {
               <div className="input-container">
                 <RiLockPasswordFill className="input-icon" />
                 <input
-                  type={showConfirmPassword ? 'text' : 'password'}
+                  type={showConfirmPassword ? "text" : "password"}
                   name="confirmPassword"
                   value={confirmPassword}
                   onChange={update}
@@ -366,7 +364,7 @@ const Register = () => {
                     className="register-consent-input"
                   />
                   <span className="accept">I accept</span>
-                  <NavLink className={'link'}> Terms of Use</NavLink>
+                  <NavLink className={"link"}> Terms of Use</NavLink>
                 </div>
                 <button className="register-button"> Register </button>
 

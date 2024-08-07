@@ -1,16 +1,17 @@
-import React from 'react';
-import './TraditionalHotel.scss';
-import Fetch from '../../hooks/Fetch';
+import React from "react";
+import "./TraditionalHotel.scss";
+import Fetch from "../../hooks/Fetch";
+import { API } from "../../utiles/shortAPI";
 
 const TraditionalHotel = () => {
   // Global state variables
   const { data, loading, error } = Fetch(
-    `http://localhost:9900/api/hotels?featured=true&min=10&max=199`
+    `${API}/hotels?featured=true&min=10&max=199`
   );
   return (
     <div className="traditional-hotels">
       {loading ? (
-        'Loading...'
+        "Loading..."
       ) : error ? (
         <div> {error} </div>
       ) : (

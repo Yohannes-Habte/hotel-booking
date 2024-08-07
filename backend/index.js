@@ -22,7 +22,7 @@ const app = express();
 app.use(cookieParser());
 app.use(cors({origin: ["http://localhost:3000", "http://hotel-booking-app.onrender.com"]}));
 app.use(express.json());
-const port = process.env.PORT || 9900;
+
 
 // Mongoose
 dotenv.config();
@@ -36,18 +36,19 @@ const connectToDB = async () => {
 };
 
 // End points
-app.use('/api/users', userRouter);
-app.use('/api/hotels', hotelRouter);
-app.use('/api/rooms', roomRouter);
-app.use('/api/payment', paymentRouter);
-app.use('/api/pages', pagesRouter);
-app.use('/api/comments', commentRouter);
+app.use('/api/v1/users', userRouter);
+app.use('/api/v1/hotels', hotelRouter);
+app.use('/api/v1/rooms', roomRouter);
+app.use('/api/v1/payment', paymentRouter);
+app.use('/api/v1/pages', pagesRouter);
+app.use('/api/v1/comments', commentRouter);
 
 // Static assets
 app.use(express.static('assets'));
 
 // Global Error handler
 app.use(globalErrorHandler);
+const port = process.env.PORT || 3000;
 
 // To run Express App, you need to do ...
 app.listen(port, () => {

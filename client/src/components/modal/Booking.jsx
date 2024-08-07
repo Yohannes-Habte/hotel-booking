@@ -1,11 +1,12 @@
-import { useContext, useState } from 'react';
-import { AiOutlineClose } from 'react-icons/ai';
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
-import Fetch from '../../hooks/Fetch';
-import './Booking.scss';
-import { SearchContext } from '../../context/search/SearchProvider';
-import CheckoutSteps from '../checkoutSteps/CheckoutSteps';
+import { useContext, useState } from "react";
+import { AiOutlineClose } from "react-icons/ai";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import Fetch from "../../hooks/Fetch";
+import "./Booking.scss";
+import { SearchContext } from "../../context/search/SearchProvider";
+import CheckoutSteps from "../checkoutSteps/CheckoutSteps";
+import { API } from "../../utiles/shortAPI";
 
 const Booking = ({ setOpenModal, hotelID }) => {
   const navigate = useNavigate();
@@ -16,7 +17,7 @@ const Booking = ({ setOpenModal, hotelID }) => {
 
   // Global function
   const { data, loading, error } = Fetch(
-    `http://localhost:9900/api/hotels/hotel/${hotelID}/rooms`
+    `${API}/hotels/hotel/${hotelID}/rooms`
   );
 
   //! Handle select room
@@ -60,14 +61,13 @@ const Booking = ({ setOpenModal, hotelID }) => {
     try {
       await Promise.all(
         selectedRooms.map((roomId) => {
-          const { data } = axios.put(
-            `http://localhost:9900/api/rooms/availability/${roomId}`,
-            { dates: allDates }
-          );
+          const { data } = axios.put(`${API}/rooms/availability/${roomId}`, {
+            dates: allDates,
+          });
           return data;
         })
       );
-      navigate('/payment');
+      navigate("/payment");
       setOpenModal(false);
     } catch (error) {
       console.log(error);
@@ -77,7 +77,7 @@ const Booking = ({ setOpenModal, hotelID }) => {
   return (
     <section className="modal-booking">
       <CheckoutSteps step1 step2 step3 step4></CheckoutSteps>
-      
+
       <article className="modal-container">
         <AiOutlineClose
           onClick={() => setOpenModal(false)}

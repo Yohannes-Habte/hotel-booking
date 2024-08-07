@@ -1,10 +1,6 @@
-import React, { useEffect } from 'react';
-import './Stripe.scss';
-import { useNavigate } from 'react-router-dom';
+import "./Stripe.scss";
 
 const StripeSuccess = () => {
-  const navigate = useNavigate();
-
   // useEffect(()=>{
   //    navigate("/")
   // },5000)

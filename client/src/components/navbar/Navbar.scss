@@ -1,5 +1,5 @@
-@import '../../styles/Variables.scss';
-@import '../../styles/Mixins.scss';
+@import "../../styles/Variables.scss";
+@import "../../styles/Mixins.scss";
 
 // Mobile styling
 .navbar {
@@ -207,7 +207,6 @@
         display: flex;
         flex-direction: row;
         align-items: center;
-       
 
         .item {
           width: 50px;
@@ -266,11 +265,11 @@
         display: flex;
         align-items: center;
         gap: 1rem;
-    
+
         .userName {
           color: #ffffff;
         }
-    
+
         .user-icon {
           color: #ffffff;
           font-size: 1.6rem;
@@ -281,6 +280,21 @@
         }
       }
 
+      .signup-login {
+        .account-item {
+          width: fit-content;
+          background-color: #a2d2ff;
+
+          &:hover {
+            background-color: #a2d2ffcc;
+          }
+          .account-link {
+            &:hover {
+              color: red;
+            }
+          }
+        }
+      }
     }
 
     .hamburger-icon {
@@ -288,5 +302,3 @@
     }
   }
 }
-
-
