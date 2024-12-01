@@ -11,8 +11,9 @@
   justify-content: center;
 
   .pagement-container {
-    width: 50%;
     @include shadow2;
+    width: 50%;
+   
 
     .payment-title {
       @include title;
@@ -46,8 +47,9 @@
     justify-content: center;
 
     .pagement-container {
-      width: 50%;
       @include shadow2;
+      width: 50%;
+    
 
       .payment-title {
         @include title;
@@ -80,9 +82,10 @@
   
 
     .payement-container {
+      @include shadow2;
       width: 50%;
       margin: 2rem auto;
-      @include shadow2;
+    
 
       .payment-title {
         @include title;

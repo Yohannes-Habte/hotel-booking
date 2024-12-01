@@ -24,8 +24,8 @@
 
         // Search styling
         .search-container {
-          flex: 1;
           @include shadow;
+          flex: 1;
           background-color: $sideNavbar-bg;
           display: flex;
           flex-direction: column;
@@ -116,10 +116,10 @@
 
         // Search styling
         .search-container {
+          @include shadow;
           flex: 1;
           position: sticky;
           top: 1rem;
-          @include shadow;
           background-color: $sideNavbar-bg;
           display: flex;
           flex-direction: column;
@@ -177,8 +177,9 @@
 
         // Hotels styling
         .hotels {
-          flex: 3;
           @include shadow;
+          flex: 3;
+        
 
           .hotel-title {
           }
@@ -212,10 +213,11 @@
 
         // Search styling
         .search-container {
+          @include shadow;
           flex: 1;
           position: sticky;
           top: 1rem;
-          @include shadow;
+         
           background-color: $sideNavbar-bg;
           display: flex;
           flex-direction: column;

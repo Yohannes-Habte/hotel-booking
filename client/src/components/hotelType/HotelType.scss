@@ -45,12 +45,13 @@
 
 @media screen and (min-width: 1024px) {
   .hotel-type {
+    @include shadow2;
     width: 100%;
     max-width: $laptop;
     display: flex;
     justify-content: space-between;
     gap: 1rem;
-    @include shadow2;
+    
 
     .type-container {
 

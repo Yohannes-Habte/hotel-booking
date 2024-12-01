@@ -6,9 +6,10 @@
   padding: 1rem;
 
   .register-form-container {
+    @include shadow;
     width: $mobile;
     margin: auto;
-    @include shadow;
+  
 
     .register-field {
       border: none;
@@ -36,11 +37,12 @@
           }
 
           .input-label {
+            @include inputLabel;
             position: absolute;
             top: 0;
             left: 1.5rem;
             color: #cccccc00;
-            @include inputLabel;
+          
            
           }
 
@@ -166,9 +168,10 @@
     padding: 1rem;
 
     .register-form-container {
+      @include shadow;
       width: $tablet;
       margin: auto;
-      @include shadow;
+  
 
       .register-field {
         border: none;
@@ -201,11 +204,12 @@
             }
 
             .input-label {
+              @include inputLabel;
               position: absolute;
               top: 0.01rem;
               left: 1.5rem;
               color: #cccccc00;
-              @include inputLabel;
+             
               
             }
 
@@ -325,9 +329,10 @@
     padding: 1rem;
 
     .register-form-container {
+      @include shadow;
       width: $laptop;
       margin: auto;
-      @include shadow;
+    
 
       .register-field {
         border: none;
@@ -360,11 +365,12 @@
             }
 
             .input-label {
+              @include inputLabel;
               position: absolute;
               top: 0;
               left: 1.5rem;
               color: #cccccc;
-              @include inputLabel;
+              
             
             }
 

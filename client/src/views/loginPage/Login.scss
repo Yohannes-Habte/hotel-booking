@@ -11,9 +11,10 @@
   }
 
   .login-container {
+    @include shadow;
     width: $mobile;
     margin: 1rem auto;
-    @include shadow;
+   
 
     .login-icon-container {
       width: 22%;
@@ -38,8 +39,9 @@
 
       .login-form {
         .input-container {
-          position: relative;
           @include inputContainer;
+          position: relative;
+       
 
           .input-field {
             @include inputField;
@@ -157,9 +159,10 @@
     }
   
     .login-container {
+      @include shadow;
       width: $tablet;
       margin: 1rem auto;
-      @include shadow;
+   
   
       .login-icon-container {
         width: 25%;
@@ -186,8 +189,9 @@
   
         .login-form {
           .input-container {
-            position: relative;
             @include inputContainer;
+            position: relative;
+           
   
             .input-field {
               @include inputField;
@@ -302,9 +306,10 @@
     }
 
     .login-container {
+      @include shadow;
       width: 50%;
       margin: auto;
-      @include shadow;
+    
 
       .login-icon-container {
         width: 12%;
@@ -321,8 +326,9 @@
 
         .login-form {
           .input-container {
-            position: relative;
             @include inputContainer;
+            position: relative;
+           
 
             .input-field {
               @include inputField;

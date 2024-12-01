@@ -1,5 +1,5 @@
-@import '../../styles/Variables.scss';
-@import '../../styles/Mixins.scss';
+@import "../../styles/Variables.scss";
+@import "../../styles/Mixins.scss";
 
 // Mobile
 .about-page {
@@ -85,8 +85,8 @@
           color: #000000;
         }
         .step {
-          position: relative;
           @include shadow2;
+          position: relative;
           margin-top: 1rem;
           cursor: pointer;
 
@@ -113,8 +113,8 @@
           }
 
           .paragraph {
-            background-color: none;
             @include shadow2;
+            background-color: none;
             margin-top: 0.3rem;
           }
         }
@@ -146,13 +146,13 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       grid-template-areas:
-        'title title'
-        'steps image';
+        "title title"
+        "steps image";
       column-gap: 1rem;
 
       .about-title {
-        grid-area: title;
         @include title;
+        grid-area: title;
       }
 
       .booking-steps {
@@ -166,8 +166,8 @@
         }
 
         .step {
-          position: relative;
           @include shadow2;
+          position: relative;
           margin-top: 1rem;
           cursor: pointer;
 
@@ -197,8 +197,8 @@
           }
 
           .paragraph {
-            background-color: none;
             @include shadow2;
+            background-color: none;
             margin-top: 0.5rem;
           }
         }
@@ -206,7 +206,6 @@
 
       .image-container {
         grid-area: image;
-      
 
         .image {
           position: absolute;

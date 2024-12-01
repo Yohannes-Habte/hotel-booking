@@ -94,11 +94,12 @@
     overflow-y: scroll;
 
     .modal-container {
+      @include shadow;
       max-width: $max-width;
       margin: auto;
       position: relative;
       padding: 1rem;
-      @include shadow;
+   
 
       .modal-icon {
         position: absolute;

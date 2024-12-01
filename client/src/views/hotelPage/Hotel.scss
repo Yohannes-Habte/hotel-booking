@@ -4,8 +4,8 @@
 // Mobile
 .single-hotel {
   .hotel-container {
-    position: relative;
     width: $mobile;
+    position: relative;
     margin: 1rem auto;
     display: flex;
     flex-direction: column;
@@ -100,10 +100,11 @@
       position: relative;
 
       .book-now-btn {
+        @include button;
         position: absolute;
         top: 0;
         right: 0;
-        @include button;
+        
       }
 
       .hotel-title {
@@ -157,8 +158,9 @@
         margin-top: 2rem;
 
         .hotel-explanation {
-          flex: 3;
           @include shadow;
+          flex: 3;
+          
 
           .hotel-name {
             @include subTitle;
@@ -314,10 +316,11 @@
         position: relative;
 
         .book-now-btn {
+          @include button;
           position: absolute;
           top: 0;
           right: 0;
-          @include button;
+         
         }
 
         .hotel-title {
@@ -372,8 +375,9 @@
           margin-top: 2rem;
 
           .hotel-explanation {
-            flex: 3;
             @include shadow;
+            flex: 3;
+       
 
             .hotel-name {
               @include subTitle;
@@ -530,10 +534,11 @@
         position: relative;
 
         .book-now-btn {
+          @include button;
           position: absolute;
           top: 0;
           right: 0;
-          @include button;
+       
         }
 
         .hotel-title {
@@ -588,8 +593,9 @@
           margin-top: 2rem;
 
           .hotel-explanation {
-            flex: 3;
             @include shadow;
+            flex: 3;
+           
 
             .hotel-name {
               @include subTitle;

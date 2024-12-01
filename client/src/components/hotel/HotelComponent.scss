@@ -27,11 +27,12 @@
     }
 
     .hotel-evaluation-container {
+      @include shadow2;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       flex: 1;
-      @include shadow2;
+     
 
       .hotel-distance {
         font-size: 12px;
@@ -77,10 +78,10 @@
           color: gray;
         }
         .search-item-btn {
+          @include button;
           position: absolute;
           top: 0;
           right: 0;
-          @include button;
           font-size: $afs;
         }
       }
@@ -167,11 +168,12 @@
       }
 
       .hotel-evaluation-container {
+        @include shadow2;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         flex: 2;
-        @include shadow2;
+       
 
         .hotel-distance {
           font-size: 12px;
@@ -217,10 +219,10 @@
             color: gray;
           }
           .search-item-btn {
+            @include button;
             position: absolute;
             top: 0;
             right: 0;
-            @include button;
             font-size: $afs;
           }
         }
@@ -305,10 +307,10 @@
             color: gray;
           }
           .search-item-btn {
+            @include button;
             position: absolute;
             top: 0;
-            right: 0;
-            @include button;
+            right: 0;         
             font-size: 1rem;
           }
         }
