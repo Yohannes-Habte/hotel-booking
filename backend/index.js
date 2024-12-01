@@ -26,7 +26,7 @@ const allowedOrigins = [
   process.env.CLIENT_URL,
   process.env.RENDER_URL,
   process.env.NETLIFY_URL,
-  "https://ercch.netlify.app",
+  "https://lisa-hotel.netlify.app",
 ];
 
 const corsConfig = {
